@@ -314,24 +314,10 @@
     },
     {
       "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/transcriptomics/tutorials/scrna-preprocessing/slides.html",
-      "name": "Dealing with Cross-Contamination in Fixed Barcode Protocols",
-      "description": "Slides for 'Dealing with Cross-Contamination in Fixed Barcode Protocols' tutorial",
+      "url": "https://training.galaxyproject.org//training-material/topics/transcriptomics/tutorials/scrna-plates-batches-barcodes/slides.html",
+      "name": "Plates, Batches, and Barcodes",
+      "description": "Slides for 'Plates, Batches, and Barcodes' tutorial",
       "learningResourceType": "slides",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/transcriptomics/tutorials/scrna-preprocessing/tutorial.html",
-      "name": "Pre-processing of Single-Cell RNA Data",
-      "description": "Hands-on for 'Pre-processing of Single-Cell RNA Data' tutorial",
-      "learningResourceType": "hands-on tutorial",
       "interactivityType": "expositive",
       "provider": {
         "@type": "Organization",
@@ -514,20 +500,18 @@
                         
                     
                         
-                            
-                            <li> Pre-processing of Single-Cell RNA Data:
-                            
-                                <a href="/training-material/topics/transcriptomics/tutorials/scrna-preprocessing/slides.html"><i class="fab fa-slideshare" aria-hidden="true"></i><span class="visually-hidden">slides</span> slides</a>
-                                
-                            
-                            
-                                
-                                    - <a href="/training-material/topics/transcriptomics/tutorials/scrna-preprocessing/tutorial.html"><i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span> hands-on</a>
-                                
-                            
-                            </li>
+                    
                         
                     
+                        
+                            
+                            <li> Plates, Batches, and Barcodes:
+                            
+                                <a href="/training-material/topics/transcriptomics/tutorials/scrna-plates-batches-barcodes/slides.html"><i class="fab fa-slideshare" aria-hidden="true"></i><span class="visually-hidden">slides</span> slides</a>
+                                
+                            
+                            
+                            </li>
                         
                     
                         
@@ -656,13 +640,15 @@
         
     
         
+    
+        
+    
+        
+    
+        
         <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
             Galaxy Africa
         </a>
-        
-    
-        
-    
         
     
         
@@ -684,13 +670,9 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://humancellatlas.usegalaxy.eu/" title="Human Cell Atlas">
             Human Cell Atlas
         </a>
-        
-    
         
     
         
@@ -788,7 +770,7 @@
             </ul>
             
 
-            <p><strong> <i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> Jun 12, 2020 </p>
+            <p><strong> <i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> Feb 9, 2021 </p>
         </blockquote>
 
         <div class="container">
@@ -920,7 +902,7 @@ https://zenodo.org/record/3386291/files/mt_controls.txt
   <h3 id="hands_on-hands-on-calculate-qc-metrics"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Calculate QC metrics</h3>
 
   <ol>
-    <li><strong>Scater: Calculate QC metrics</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/scater_create_qcmetric_ready_sce/scater_create_qcmetric_ready_sce/1.12.2" title="Tested with toolshed.g2.bx.psu.edu/repos/iuc/scater_create_qcmetric_ready_sce/scater_create_qcmetric_ready_sce/1.12.2"><strong>Scater: Calculate QC metrics</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/iuc/scater_create_qcmetric_ready_sce/scater_create_qcmetric_ready_sce/1.12.2</span></span>   with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“<span class="notranslate">Expression</span> matrix in tabular format”</em>: <code class="language-plaintext highlighter-rouge">counts.txt</code> (Input dataset)</li>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Format dataset describing the features in tabular format”</em>: <code class="language-plaintext highlighter-rouge">annotation.txt</code> (Input dataset)</li>
@@ -943,7 +925,7 @@ https://zenodo.org/record/3386291/files/mt_controls.txt
   <h3 id="hands_on-hands-on-plot-library-qc"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Plot library QC</h3>
 
   <ol>
-    <li><strong>Scater: plot library QC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/scater_plot_dist_scatter/scater_plot_dist_scatter/1.12.2" title="Tested with toolshed.g2.bx.psu.edu/repos/iuc/scater_plot_dist_scatter/scater_plot_dist_scatter/1.12.2"><strong>Scater: plot library QC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/iuc/scater_plot_dist_scatter/scater_plot_dist_scatter/1.12.2</span></span>   with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Input SingleCellLoomExperiment dataset”</em>: <code class="language-plaintext highlighter-rouge">output_loom</code> (output of <strong>Scater: Calculate QC metrics</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>)</li>
         <li><i class="far fa-check-square" aria-hidden="true"></i><span class="visually-hidden">param-check</span> <em>“Plot on log scale”</em>: <code class="language-plaintext highlighter-rouge">No</code></li>
@@ -985,7 +967,7 @@ Here, we’ll use the manual filtering method.</p>
   <h3 id="hands_on-hands-on-filtering-with-scater"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Filtering with scater</h3>
 
   <ol>
-    <li><strong>Scater: filter SCE</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/scater_filter/scater_filter/1.12.2" title="Tested with toolshed.g2.bx.psu.edu/repos/iuc/scater_filter/scater_filter/1.12.2"><strong>Scater: filter SCE</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/iuc/scater_filter/scater_filter/1.12.2</span></span>   with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Input SingleCellLoomExperiment dataset”</em>: <code class="language-plaintext highlighter-rouge">output_loom</code> (output of <strong>Scater: Calculate QC metrics</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>)</li>
         <li><em>“Type of filter”</em>: <code class="language-plaintext highlighter-rouge">manual</code>
@@ -1018,7 +1000,7 @@ Here, we’ll use the manual filtering method.</p>
   <h3 id="hands_on-hands-on-plot-library-qc-after-filtering"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Plot library QC after filtering</h3>
 
   <ol>
-    <li><strong>Scater: plot library QC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/scater_plot_dist_scatter/scater_plot_dist_scatter/1.12.2" title="Tested with toolshed.g2.bx.psu.edu/repos/iuc/scater_plot_dist_scatter/scater_plot_dist_scatter/1.12.2"><strong>Scater: plot library QC</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/iuc/scater_plot_dist_scatter/scater_plot_dist_scatter/1.12.2</span></span>   with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Input SingleCellLoomExperiment dataset”</em>: <code class="language-plaintext highlighter-rouge">output_loom</code> (output of <strong>Scater: filter SCE</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>)</li>
       </ul>
@@ -1047,7 +1029,7 @@ Here, we’ll use the manual filtering method.</p>
 <blockquote class="notranslate hands_on">
   <h3 id="hands_on-hands-on-task-description"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: Task description</h3>
   <ol>
-    <li><strong>Scater: filter SCE</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/scater_filter/scater_filter/1.12.2" title="Tested with toolshed.g2.bx.psu.edu/repos/iuc/scater_filter/scater_filter/1.12.2"><strong>Scater: filter SCE</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/iuc/scater_filter/scater_filter/1.12.2</span></span>   with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Input SingleCellLoomExperiment dataset”</em>: <code class="language-plaintext highlighter-rouge">output_loom</code> (output of <strong>Scater: Calculate QC metrics</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>)</li>
         <li><em>“Type of filter”</em>: <code class="language-plaintext highlighter-rouge">automatic</code></li>
@@ -1078,7 +1060,7 @@ Here, we’ll use the manual filtering method.</p>
 <blockquote class="notranslate hands_on">
   <h3 id="hands_on-hands-on-pca-plot"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: PCA plot</h3>
   <ol>
-    <li><strong>Scater: PCA plot</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span> with the following parameters:
+    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/scater_plot_pca/scater_plot_pca/1.12.2" title="Tested with toolshed.g2.bx.psu.edu/repos/iuc/scater_plot_pca/scater_plot_pca/1.12.2"><strong>Scater: PCA plot</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/iuc/scater_plot_pca/scater_plot_pca/1.12.2</span></span>   with the following parameters:
       <ul>
         <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Input SingleCellLoomExperiment dataset”</em>: <code class="language-plaintext highlighter-rouge">output_loom</code> (output of <strong>Scater: filter SCE</strong> <i class="fas fa-wrench" aria-hidden="true"></i><span class="visually-hidden">tool</span>)</li>
         <li><em>“Feature (from annotation file) to colour PCA plot points by”</em>: <code class="language-plaintext highlighter-rouge">Mutation_Status</code></li>
@@ -1186,7 +1168,7 @@ The <span class="notranslate">workflow</span> available from the “Supporting M
                     <h1>Citing this Tutorial</h1>
                     <p>
                         <ol>
-                            <li id="citation-text">Graham Etherington, Nicola Soranzo, 2020 <b>Single-cell quality control with scater (Galaxy Training Materials)</b>. <a href="/training-material/topics/transcriptomics/tutorials/scrna-scater-qc/tutorial.html">/training-material/topics/transcriptomics/tutorials/scrna-scater-qc/tutorial.html</a> Online; accessed TODAY
+                            <li id="citation-text">Graham Etherington, Nicola Soranzo, 2021 <b>Single-cell quality control with scater (Galaxy Training Materials)</b>. <a href="/training-material/topics/transcriptomics/tutorials/scrna-scater-qc/tutorial.html">/training-material/topics/transcriptomics/tutorials/scrna-scater-qc/tutorial.html</a> Online; accessed TODAY
                             </li>
                             <li>
                             Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
@@ -1203,9 +1185,9 @@ The <span class="notranslate">workflow</span> available from the “Supporting M
 <code id="citation-code">@misc{transcriptomics-scrna-scater-qc,
     author = "Graham Etherington and Nicola Soranzo",
     title = "Single-cell quality control with scater (Galaxy Training Materials)",
-    year = "2020",
-    month = "06",
-    day = "12"
+    year = "2021",
+    month = "02",
+    day = "09"
     url = "\url{/training-material/topics/transcriptomics/tutorials/scrna-scater-qc/tutorial.html}",
     note = "[Online; accessed TODAY]"
 }
@@ -1242,6 +1224,88 @@ document.getElementById("citation-text").innerHTML = document.getElementById("ci
 
         
 
+        
+        <blockquote class="agenda follow-up">
+            <strong class="follow-up"><i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">curriculum</span> Do you want to extend your knowledge? Follow one of our recommended follow-up trainings:</strong>
+            <ul>
+                
+    <li>
+    
+        
+        
+        <a href="/training-material/topics/transcriptomics">Transcriptomics</a>
+        
+            <ul>
+                
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            
+                            <li> Downstream Single-cell RNA analysis with RaceID:
+                            
+                            
+                                
+                                     <a href="/training-material/topics/transcriptomics/tutorials/scrna-raceid/tutorial.html"><i class="fas fa-laptop" aria-hidden="true"></i><span class="visually-hidden">tutorial</span> hands-on</a>
+                                
+                            
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                
+            </ul>
+        
+    
+    </li>
+
+            </ul>
+        </blockquote>
         
     </section>
 </div>

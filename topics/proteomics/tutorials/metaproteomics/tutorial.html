@@ -386,6 +386,10 @@
             <ul>
                 <div class="supporting_material">
                 
+                    <li class="btn btn-default supporting_material"><a href="/training-material/topics/proteomics/slides/introduction.html" title="Topic Overview slides">
+                        <i class="fab fa-slideshare" aria-hidden="true"></i><span class="visually-hidden">slides</span> Topic Overview slides
+                    </a></li>
+                
 
                 
                     <li class="btn btn-default supporting_material">
@@ -428,6 +432,12 @@
             </a>
         </li>
     
+    
+        
+    
+        
+    
+        
     
         
     
@@ -532,14 +542,6 @@
         
     
         
-    
-        
-    
-        
-    
-        
-    
-        
         <a class="dropdown-item" href="https://streetscience.usegalaxy.eu/" title="Street Science">
             Street Science
         </a>
@@ -547,6 +549,10 @@
     
         
     
+        
+        <a class="dropdown-item" href="https://usegalaxy.be/" title="UseGalaxy.be">
+            UseGalaxy.be
+        </a>
         
     
         
@@ -564,7 +570,15 @@
         
     
         
+        <a class="dropdown-item" href="https://usegalaxy.org" title="UseGalaxy.org (Main)">
+            UseGalaxy.org (Main)
+        </a>
+        
     
+        
+        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
+            UseGalaxy.org.au
+        </a>
         
     
         
@@ -580,7 +594,7 @@
             </ul>
             
 
-            <p><strong> <i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> Oct 15, 2020 </p>
+            <p><strong> <i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> Feb 18, 2021 </p>
         </blockquote>
 
         <div class="container">
@@ -783,7 +797,7 @@ generating PSMs from MS/MS data. For the purpose of this tutorial, <strong>X!Tan
 
       <ul>
         <li><strong>Fragment Tolerance Units</strong>: <code class="language-plaintext highlighter-rouge">Daltons</code></li>
-        <li><strong>Fragment Tolerance</strong>: <code class="language-plaintext highlighter-rouge">0.02</code>- this is high resolution MS/MS data</li>
+        <li><strong>Fragment Tolerance</strong>: <code class="language-plaintext highlighter-rouge">0.2</code>- this is high resolution MS/MS data</li>
         <li><strong>Maximum Charge</strong>: <code class="language-plaintext highlighter-rouge">6</code></li>
       </ul>
 
@@ -910,7 +924,7 @@ proteins and provides a fast matching algorithm for peptides.</p>
   <h3 id="comment-unipept"><i class="far fa-comment-dots" aria-hidden="true"></i><span class="visually-hidden">comment</span> Unipept</h3>
 
   <p>Users can access UniPept via a <a href="https://unipept.ugent.be">web page</a> and paste peptide
-sequences into the search form to retrieve protein information. But we`ll use the <span class="notranslate">Galaxy</span>
+sequences into the search form to retrieve protein information. But we’ll use the <span class="notranslate">Galaxy</span>
 <em>Unipept</em> tool to automate the process. The <em>Unipept</em> tool sends the peptide list to the
 UniPept REST API service, then transforms the results into datasets that can be further analyzed
 or operated on within <span class="notranslate">Galaxy</span>.</p>
@@ -1441,7 +1455,7 @@ for each protein.</p>
         <li><strong>Filter Tabular Input Lines</strong>: Click on <code class="language-plaintext highlighter-rouge">+ Insert Filter Tabular Input Lines</code>:</li>
         <li><strong>Filter By</strong>: Select <code class="language-plaintext highlighter-rouge">skip leading lines</code>
           <ul>
-            <li><strong>Skip lines</strong>: leave blank</li>
+            <li><strong>Skip lines</strong>: <code class="language-plaintext highlighter-rouge">1</code></li>
           </ul>
         </li>
         <li>Add another Filter: Click on <code class="language-plaintext highlighter-rouge">+ Insert Filter Tabular Input Lines</code>:</li>
@@ -1601,9 +1615,6 @@ ORDER BY  bering_peptides desc,bering_psms desc
       <p><a href="https://www.ncbi.nlm.nih.gov/pubmed/28552653">Unipept</a></p>
     </li>
     <li>
-      <p><a href="http://z.umn.edu/metaproteomicsgateway"><span class="notranslate">Galaxy</span>-P Metaproteomics instance</a></p>
-    </li>
-    <li>
       <p><a href="http://z.umn.edu/mpvideo2018">Metaproteomics video</a></p>
     </li>
   </ul>
@@ -1672,7 +1683,7 @@ ORDER BY  bering_peptides desc,bering_psms desc
                     <h1>Citing this Tutorial</h1>
                     <p>
                         <ol>
-                            <li id="citation-text">Timothy J. Griffin, Pratik Jagtap, James Johnson, Clemens Blank, Subina Mehta, 2020 <b>Metaproteomics tutorial (Galaxy Training Materials)</b>. <a href="/training-material/topics/proteomics/tutorials/metaproteomics/tutorial.html">/training-material/topics/proteomics/tutorials/metaproteomics/tutorial.html</a> Online; accessed TODAY
+                            <li id="citation-text">Timothy J. Griffin, Pratik Jagtap, James Johnson, Clemens Blank, Subina Mehta, 2021 <b>Metaproteomics tutorial (Galaxy Training Materials)</b>. <a href="/training-material/topics/proteomics/tutorials/metaproteomics/tutorial.html">/training-material/topics/proteomics/tutorials/metaproteomics/tutorial.html</a> Online; accessed TODAY
                             </li>
                             <li>
                             Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
@@ -1689,9 +1700,9 @@ ORDER BY  bering_peptides desc,bering_psms desc
 <code id="citation-code">@misc{proteomics-metaproteomics,
     author = "Timothy J. Griffin and Pratik Jagtap and James Johnson and Clemens Blank and Subina Mehta",
     title = "Metaproteomics tutorial (Galaxy Training Materials)",
-    year = "2020",
-    month = "10",
-    day = "15"
+    year = "2021",
+    month = "02",
+    day = "18"
     url = "\url{/training-material/topics/proteomics/tutorials/metaproteomics/tutorial.html}",
     note = "[Online; accessed TODAY]"
 }
