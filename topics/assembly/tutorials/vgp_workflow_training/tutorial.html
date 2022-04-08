@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "1970-01-01 00:00:06 +0000",
+  "dateModified": "1970-01-01 00:00:07 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "VGP assembly pipeline - short version",
   "interactivityType": "mixed",
@@ -352,20 +352,6 @@
       "name": "Quality Control",
       "description": "Hands-on for 'Quality Control' tutorial",
       "learningResourceType": "hands-on tutorial",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/sequence-analysis/tutorials/quality-control/slides.html",
-      "name": "Quality Control",
-      "description": "Slides for 'Quality Control' tutorial",
-      "learningResourceType": "slides",
       "interactivityType": "expositive",
       "provider": {
         "@type": "Organization",
@@ -672,8 +658,6 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://africa.usegalaxy.eu/" title="Galaxy Africa">
             Galaxy Africa
         </a>
@@ -732,11 +716,11 @@
         
     
         
-    
-        
         <a class="dropdown-item" href="https://metagenomics.usegalaxy.eu/" title="Metagenomics">
             Metagenomics
         </a>
+        
+    
         
     
         
@@ -778,9 +762,13 @@
         
     
         
+    
+        
         <a class="dropdown-item" href="https://usegalaxy.org" title="UseGalaxy.org (Main)">
             UseGalaxy.org (Main)
         </a>
+        
+    
         
     
         
@@ -797,7 +785,7 @@
         </ul>
         
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Apr 6, 2022 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Apr 7, 2022 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
             
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
@@ -1063,6 +1051,11 @@ dataset_03    https://zenodo.org/record/6098306/files/HiFi_synthetic_50x_03.fast
 
 <p>According to the report, both assemblies are quite similar; the primary assembly includes 18 contigs, whose cumulative length is around 12.2Mbp. The alte<span class="notranslate">rna</span>te assembly includes 17 contigs, whose total length is 11.3Mbp. As we can see in figure 4a, both assemblies come close to the estimated genome size, which is as expected since we used hifiasm-HiC mode to generate phased assemblies which lowers the chance of false duplications that can inflate assembly size.</p>
 
+<blockquote class="comment">
+  <h3 id="comment-are-you-working-with-prialt-assemblies"><i class="far fa-comment-dots" aria-hidden="true"></i><span class="visually-hidden">comment</span> Are you working with pri/alt assemblies?</h3>
+  <p>This tutorial uses the hifiasm-HiC <span class="notranslate">workflow</span>, which generates phased hap1 and hap2 assemblies. The phasing helps lower the chance of false duplications, since the phasing information helps the assembler know which genomic variation is heterozygosity at the same locus versus being two different loci entirely. If you are working with primary/alte<span class="notranslate">rna</span>te assemblies (especially if there is no inte<span class="notranslate">rna</span>l purging in the initial assembly), you can expect higher false duplication rates than we observe here with the yeast HiC hap1/hap2.</p>
+</blockquote>
+
 <blockquote class="question">
   <h3 id="question-questions"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Questions</h3>
 
@@ -1111,36 +1104,17 @@ dataset_03    https://zenodo.org/record/6098306/files/HiFi_synthetic_50x_03.fast
 
 </blockquote>
 
-<p>Despite <strong>BUSCO</strong> being robust for species that have been widely studied, it can be inaccurate when the newly assembled genome belongs to a taxonomic group that is not well represented in <a href="https://www.orthodb.org/">OrthoDB</a>. Merqury provides a complementary approach for assessing genome assembly quality metrics in a reference-free manner via <em>k</em>-mer copy number analysis.</p>
-
-<blockquote class="notranslate hands_on">
-  <h3 id="hands_on-hands-on-k-mer-based-evaluation-with-merqury"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: <em>k</em>-mer based evaluation with Merqury</h3>
-
-  <ol>
-    <li><span class="tool" data-tool="toolshed.g2.bx.psu.edu/repos/iuc/merqury/merqury/1.3" title="Tested with toolshed.g2.bx.psu.edu/repos/iuc/merqury/merqury/1.3"><strong>Merqury</strong> <i class="fas fa-wrench" aria-hidden="true"></i><i aria-hidden="true" class="fas fa-cog"></i><span class="visually-hidden">Tool: <span class="notranslate">toolshed</span>.g2.bx.psu.edu/repos/iuc/merqury/merqury/1.3</span></span>  with the following parameters:
-      <ul>
-        <li><em>“Evaluation mode”</em>: <code class="language-plaintext highlighter-rouge">Default mode</code>
-          <ul>
-            <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“k-mer counts database”</em>: <code class="language-plaintext highlighter-rouge">Merged meryldb</code></li>
-            <li><em>“Number of assemblies”</em>: <code class="language-plaintext highlighter-rouge">Two assemblies</code>
-              <ul>
-                <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“First genome assembly”</em>: <code class="language-plaintext highlighter-rouge">Primary contigs FASTA</code></li>
-                <li><i class="far fa-file" aria-hidden="true"></i><span class="visually-hidden">param-file</span> <em>“Second genome assembly”</em>: <code class="language-plaintext highlighter-rouge">Alte<span class="notranslate">rna</span>te contigs FASTA</code></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ol>
-
-</blockquote>
+<p>Despite <strong>BUSCO</strong> being robust for species that have been widely studied, it can be inaccurate when the newly assembled genome belongs to a taxonomic group that is not well represented in <a href="https://www.orthodb.org/">OrthoDB</a>. Merqury provides a complementary approach for assessing genome assembly quality metrics in a reference-free manner via <em>k</em>-mer copy number analysis. Specifically, it takes our hap1 as the first genome assembly, hap2 as the second genome assembly, and the merylDB generated previously for k-mer counts. Like the other QC metrics we have been looking at, the VGP Hifiasm-HiC <span class="notranslate">workflow</span> will automatically generate the Merqury analysis.</p>
 
 <p>By default, <strong>Merqury</strong> generates three collections as output: stats, plots and QV stats. The “stats” collection contains the completeness statistics, while the “QV stats” collection contains the quality value statistics. Let’s have a look at the copy number (CN) spectrum plot, known as the <em>spectra-cn</em> plot (fig. 6).</p>
 
-<figure id="figure-6"><img src="../../images/vgp_assembly/merqury_cn_plot.png" alt="Figure 7: Merqury plot. " width="80%" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 6:</span> Merqury CN plot corresponding to the primary assembly. This plot tracks the multiplicity of each k-mer found in the Hi-Fi read set and colors it by the number of times it is found in a given assembly. Merqury connects the midpoint of each histogram bin with a line, giving the illusion of a smooth curve.</figcaption></figure>
+<figure id="figure-6"><img src="../../images/vgp_assembly/yeast_c_merqury_cn.png" alt="Figure 7: Merqury spectra-cn plot for initial yeast contigs. " width="80%" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 6:</span> Merqury CN plot for these yeast haplotypes. This plot tracks the multiplicity of each k-mer found in the read set and colors it by the number of times it is found in a given assembly. Merqury connects the midpoint of each histogram bin with a line, giving the illusion of a smooth curve. We can see a small amount of false duplications here: at the 50 mark on the x-axis, there is a small amount of k-mers present at 3-copy across the two assemblies (the green bump).</figcaption></figure>
 
-<p>As suggested previously by the report generated by <strong>QUAST</strong> (fig. 5), the assemblies contain a large proportion of duplicated <span class="notranslate">reads</span>. The red area represents one-copy <em>k</em>-mers in the genome, while the blue area represents two-copy <em>k</em>-mers, originating from haplotype-specific duplications. From that figure we can state that the sequencing coverage is around 50x.</p>
+<p>The spectra-cn plot looks at both of your assemblies (here, your haplotypes) taken <em>together</em>. Thus, we know there is some false duplication (the 3-copy green bump) present as 2-copy in one of our assemblies, but we don’t know which one. We can look at the individual copy number spectrum for each haplotype in order to figure out which one contains the 2-copy k-mers (<em>i.e.</em>, the false duplications).</p>
+
+<figure id="figure-7"><img src="../../images/vgp_assembly/yeast_c_merqury_hap2.png" alt="Figure 7: Merqury spectra-hap2 plot for initial yeast contigs. " width="80%" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 7:</span> Merqury spectra-CN plot for hap2. One can see the small bump of 2-copy k-mers at around the 50 mark on the x-axis.</figcaption></figure>
+
+<p>Now that we know which haplotype contains the false duplications, we can run the purging <span class="notranslate">workflow</span> to try to get rid of these duplicates.</p>
 
 <h1 id="post-assembly-processing">Post-assembly processing</h1>
 
@@ -1193,7 +1167,7 @@ dataset_03    https://zenodo.org/record/6098306/files/HiFi_synthetic_50x_03.fast
 
 <p>As we can observe in the cumulative plot of the file <code class="language-plaintext highlighter-rouge">119</code> (fig. 7a), the total length of the assembly (12.160.926 bp) is slightly larger than the expected genome size. With respect to the NG50 statistic (fig. 10b), the value is 922.430 bp, which is significantly higher than the value obtained during the first evaluation stage (813.039 bp). This increase in NG50 means this scaffolded assembly is more contiguous compared to the non-scaffolded contigs.</p>
 
-<figure id="figure-7"><img src="../../images/vgp_assembly/QUAST_cummulative.png" alt="Figure 10: QUAST and BUSCO plots. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 7:</span> . Cumulative length plot (a). NGx plot. The y-axis represents the NGx values in Mbp, and the x-axis is the percentage of the genome (b). Assembly evaluation after runnig Bionano. BUSCO genes are defined as "Complete (C) and single copy (S)" when found once in the single-copy ortholog database, "Complete (C) and duplicated (D)" when found more than once, "Fragmented (F)" when genes are matching just partially, and "Missing (M)" when genes were expected but not detected (c).</figcaption></figure>
+<figure id="figure-8"><img src="../../images/vgp_assembly/QUAST_cummulative.png" alt="Figure 10: QUAST and BUSCO plots. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 8:</span> . Cumulative length plot (a). NGx plot. The y-axis represents the NGx values in Mbp, and the x-axis is the percentage of the genome (b). Assembly evaluation after runnig Bionano. BUSCO genes are defined as "Complete (C) and single copy (S)" when found once in the single-copy ortholog database, "Complete (C) and duplicated (D)" when found more than once, "Fragmented (F)" when genes are matching just partially, and "Missing (M)" when genes were expected but not detected (c).</figcaption></figure>
 
 <p>It is also recommended to examine <strong>BUSCO</strong> outputs. In the summary image (fig. 7c), which can be found in the daset <code class="language-plaintext highlighter-rouge">117</code>, we can appreciate that most of the universal single-copy orthologs are present in our assembly at the expected single-copy.</p>
 
@@ -1244,7 +1218,7 @@ dataset_03    https://zenodo.org/record/6098306/files/HiFi_synthetic_50x_03.fast
 
 <p>In order to evaluate the Hi-C hybrid scaffolding, we are going to compare the contact maps before and after running the HiC hybrid scaffolding <span class="notranslate">workflow</span> (fig. 8), corresponding to the datasets <code class="language-plaintext highlighter-rouge">130</code> and <code class="language-plaintext highlighter-rouge">141</code> respectively.</p>
 
-<figure id="figure-8"><img src="../../images/vgp_assembly/hi-c_pretext_final.png" alt="Figure 8: Pretext final contact map. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 8:</span> Hi-C maps generated by Pretext using Hi-C data. The red circles indicate the  differences between the contact maps generated after (a) and before (b) Hi-C hybrid scaffolding.</figcaption></figure>
+<figure id="figure-9"><img src="../../images/vgp_assembly/hi-c_pretext_final.png" alt="Figure 8: Pretext final contact map. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 9:</span> Hi-C maps generated by Pretext using Hi-C data. The red circles indicate the  differences between the contact maps generated after (a) and before (b) Hi-C hybrid scaffolding.</figcaption></figure>
 
 <p>The regions marked with red circles highlight the most notable difference between the two contact maps, where inversion has been fixed.</p>
 
@@ -1252,11 +1226,11 @@ dataset_03    https://zenodo.org/record/6098306/files/HiFi_synthetic_50x_03.fast
 
 <p>To sum up, it is worthwhile to compare the final assembly with the <a href="https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/146/045/GCF_000146045.2_R64/GCF_000146045.2_R64_assembly_stats.txt"><em>S. cerevisiae</em> S288C reference genome</a>.</p>
 
-<figure id="figure-9"><img src="../../images/vgp_assembly/stats_conclusion.png" alt="Table 1: Final stats. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 9:</span> Comparison between the final assembly generated in this training and the reference genome. Contiguity plot using the reference genome size (a). Assemby statistics (b).</figcaption></figure>
+<figure id="figure-10"><img src="../../images/vgp_assembly/stats_conclusion.png" alt="Table 1: Final stats. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 10:</span> Comparison between the final assembly generated in this training and the reference genome. Contiguity plot using the reference genome size (a). Assemby statistics (b).</figcaption></figure>
 
 <p>With respect to the total sequence length, we can conclude that the size of our genome assembly is almost identical to the reference genome (fig.16a,b). It is noteworthy that the reference genome consists of 17 sequences, while our assembly includes only 16 chromosomes. This is due to the fact that the reference genome also includes the sequence of the mitochondrial <span class="notranslate">DNA</span>, which consists of 85,779 bp. The remaining statistics exhibit very similar values (fig. 16b).</p>
 
-<figure id="figure-10"><img src="../../images/vgp_assembly/hi-c_pretext_conclusion.png" alt="Figure 16: Comparison reference genome. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 10:</span> Comparison between contact maps generated using the final assembly (a) and the reference genome (b).</figcaption></figure>
+<figure id="figure-11"><img src="../../images/vgp_assembly/hi-c_pretext_conclusion.png" alt="Figure 16: Comparison reference genome. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 11:</span> Comparison between contact maps generated using the final assembly (a) and the reference genome (b).</figcaption></figure>
 
 <p>If we compare the contact map of our assembled genome (fig. 17a) with the reference assembly (fig. 17b), we can see that the two are essentially identical. This means that we have achieved an almost perfect assembly at the chromosome level.</p>
 
@@ -1357,7 +1331,7 @@ author = "Delphine Lariviere and Alex Ostrovsky and Cristóbal Gallardo and Bran
 title = "VGP assembly pipeline - short version (Galaxy Training Materials)",
 year = "2022",
 month = "04",
-day = "06"
+day = "07"
 url = "\url{https://training.galaxyproject.org/training-material/topics/assembly/tutorials/vgp_workflow_training/tutorial.html}",
 note = "[Online; accessed TODAY]"
 }

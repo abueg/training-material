@@ -1350,7 +1350,7 @@
           "url": "https://training.galaxyproject.org/training-material/api/contributors/pickettbd.json"
         }
       ],
-      "last_modified_at": "06-Apr-22",
+      "last_modified_at": "07-Apr-22",
       "url": "/topics/assembly/tutorials/vgp_workflow_training/tutorial.html",
       "topic_name": "assembly",
       "tutorial_name": "vgp_workflow_training",
@@ -1379,7 +1379,6 @@
         "toolshed.g2.bx.psu.edu/repos/iuc/busco/busco/5.2.2+galaxy2",
         "toolshed.g2.bx.psu.edu/repos/iuc/genomescope/genomescope/2.0+galaxy1",
         "toolshed.g2.bx.psu.edu/repos/iuc/gfa_to_fa/gfa_to_fa/0.1.2",
-        "toolshed.g2.bx.psu.edu/repos/iuc/merqury/merqury/1.3",
         "toolshed.g2.bx.psu.edu/repos/iuc/merqury/merqury/1.3+galaxy1",
         "toolshed.g2.bx.psu.edu/repos/iuc/meryl/meryl/1.3+galaxy4",
         "toolshed.g2.bx.psu.edu/repos/iuc/minimap2/minimap2/2.24+galaxy0",
