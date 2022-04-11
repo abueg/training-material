@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "1970-01-01 00:00:07 +0000",
+  "dateModified": "1970-01-01 00:00:10 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "VGP assembly pipeline - short version",
   "interactivityType": "mixed",
@@ -380,6 +380,10 @@
     {
       "@type": "Person",
       "name": "Brandon Pickett"
+    },
+    {
+      "@type": "Person",
+      "name": "Linelle Abueg"
     }
   ],
   "contributor": [
@@ -398,6 +402,10 @@
     {
       "@type": "Person",
       "name": "Brandon Pickett"
+    },
+    {
+      "@type": "Person",
+      "name": "Linelle Abueg"
     }
   ],
   "about": [
@@ -434,6 +442,9 @@
 
 
 <a href="/training-material/hall-of-fame/pickettbd/" class="contributor-badge contributor-pickettbd"><img src="https://avatars.githubusercontent.com/pickettbd?s=27" alt="Avatar">Brandon Pickett</a>
+
+
+<a href="/training-material/hall-of-fame/abueg/" class="contributor-badge contributor-abueg"><img src="https://avatars.githubusercontent.com/abueg?s=27" alt="Avatar">Linelle Abueg</a>
 
 
 <a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
@@ -787,7 +798,7 @@
         </ul>
         
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Apr 7, 2022 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Apr 10, 2022 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
             
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
@@ -826,10 +837,10 @@
     </ol>
   </li>
   <li><a href="#genome-profile-analysis" id="markdown-toc-genome-profile-analysis">Genome profile analysis</a></li>
-  <li><a href="#hic-phased-assembly-with-hifiasm" id="markdown-toc-hic-phased-assembly-with-hifiasm">HiC-phased assembly with hifiasm</a></li>
+  <li><a href="#hifi-phased-assembly-with-hifiasm" id="markdown-toc-hifi-phased-assembly-with-hifiasm">HiFi phased assembly with hifiasm</a></li>
   <li><a href="#post-assembly-processing" id="markdown-toc-post-assembly-processing">Post-assembly processing</a></li>
   <li><a href="#hybrid-scaffolding-with-bionano-optical-maps" id="markdown-toc-hybrid-scaffolding-with-bionano-optical-maps">Hybrid scaffolding with Bionano optical maps</a></li>
-  <li><a href="#scaffolding-with-hic-data" id="markdown-toc-scaffolding-with-hic-data">Scaffolding with HiC data</a></li>
+  <li><a href="#hybrid-scaffolding-with-hi-c-data" id="markdown-toc-hybrid-scaffolding-with-hi-c-data">Hybrid scaffolding with Hi-C data</a></li>
   <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a></li>
   <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ol>
@@ -851,7 +862,7 @@
 
 <h1 id="vgp-assembly-workflow-structure">VGP assembly <span class="notranslate">workflow</span> structure</h1>
 
-<p>The VGP assembly pipeline has a modular organization, consisting of five main subworkflows (fig. 1), each one integrated by a series of data manipulation steps. This modular nature allows for the quality control assessment of intermediate steps, so that one can modify parameters (if necessary) without having to start the assembly from scratch. Additionally, this allows one to adapt the pipeline to the avilable data (<em>e.g.</em>, if Bionano data is not available, then it is not necessary to run the Bionano scaffolding <span class="notranslate">workflow</span>).</p>
+<p>The VGP assembly pipeline has a modular organization, consisting in five main subworkflows (fig. 1), each one integrated by a series of data manipulation steps. Firstly, it allows the evaluation of intermediate steps, which facilitates the modification of parameters if necessary, without the need to start from the initial stage. Secondly, it allows to adapt the <span class="notranslate">workflow</span> to the available data.</p>
 
 <blockquote>
   <figure id="figure-1"><img src="../../images/vgp_assembly/VGP_workflow_modules.png" alt="Figure 1: VGP pipeline modules. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 1:</span> VGP assembly pipeline. The VGP <span class="notranslate">workflow</span> is implemented in a modular fashion: it consists of five independent subworkflows. In addition, it includes some additional workflows (not shown in the figure), required for exporting the results to GenomeArk.</figcaption></figure>
@@ -985,6 +996,8 @@ dataset_03    https://zenodo.org/record/6098306/files/HiFi_synthetic_50x_03.fast
 
 <h1 id="genome-profile-analysis">Genome profile analysis</h1>
 
+<p><a href="/training-material/topics/assembly/tutorials/vgp_genome_assembly/tutorial.html#genome-profile-analysis"><i class="fas fa-exchange-alt" aria-hidden="true"></i><span class="visually-hidden">exchange</span> Switch to long version</a></p>
+
 <p>Now that our data and workflows are imported, we can run our first <span class="notranslate">workflow</span>. Before the assembly can be run, we need to collect metrics on the properties of the genome under consideration, such as the expected genome size according to our data. The present pipeline uses <strong>Meryl</strong> for generating the k-mer database and <strong>Genomescope</strong> for determining genome characteristics based on a k-mer analysis.</p>
 
 <blockquote class="notranslate hands_on">
@@ -1016,9 +1029,11 @@ dataset_03    https://zenodo.org/record/6098306/files/HiFi_synthetic_50x_03.fast
 
 <p>This distribution is the result of the Poisson process underlying the generation of sequencing <span class="notranslate">reads</span>. As we can see, the k-mer profile follows a bimodal distribution, indicative of a diploid genome. The distribution is consistent with the theoretical diploid model (model fit &gt; 93%). Low frequency <em>k</em>-mers are the result of sequencing errors, and are indicated by the red line. GenomeScope2 estimated a haploid genome size of around 11.7 Mbp, a value reasonably close to the <em>Saccharomyces</em> genome size.</p>
 
-<h1 id="hic-phased-assembly-with-hifiasm">HiC-phased assembly with hifiasm</h1>
+<h1 id="hifi-phased-assembly-with-hifiasm">HiFi phased assembly with hifiasm</h1>
 
-<p>After genome profiling, the next step is to run the <strong>VGP HiC-phased assembly with hifiasm and HiC data <span class="notranslate">workflow</span></strong>. This <span class="notranslate">workflow</span> uses <strong>hifiasm</strong> (HiC mode) to generate HiC-phased haplotypes (hap1 and hap2). This is in contrast to its default mode, which generates primary and alte<span class="notranslate">rna</span>te pseudohaplotype assemblies. This <span class="notranslate">workflow</span> includes three tools for evaluating assembly quality: <strong>QUAST</strong>, <strong>BUSCO</strong> and <strong>Merqury</strong>.</p>
+<p><a href="/training-material/topics/assembly/tutorials/vgp_genome_assembly/tutorial.html#hifi-phased-assembly-with-hifiasm"><i class="fas fa-exchange-alt" aria-hidden="true"></i><span class="visually-hidden">exchange</span> Switch to long version</a></p>
+
+<p>After genome profiling, the next step is to run the <strong>VGP HiFi phased assembly with hifiasm and HiC data <span class="notranslate">workflow</span></strong>. This <span class="notranslate">workflow</span> uses <strong>hifiasm</strong> (HiC mode) to generate HiC-phased haplotypes (hap1 and hap2). This is in contrast to its default mode, which generates primary and alte<span class="notranslate">rna</span>te pseudohaplotype assemblies. This <span class="notranslate">workflow</span> includes three tools for evaluating assembly quality: <strong>QUAST</strong>, <strong>BUSCO</strong> and <strong>Merqury</strong>.</p>
 
 <blockquote class="notranslate hands_on">
   <h3 id="hands_on-hands-on-vgp-hifi-phased-assembly-with-hifiasm-and-hic-data-workflow"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: VGP HiFi phased assembly with hifiasm and HiC data <span class="notranslate">workflow</span></h3>
@@ -1120,6 +1135,8 @@ dataset_03    https://zenodo.org/record/6098306/files/HiFi_synthetic_50x_03.fast
 
 <h1 id="post-assembly-processing">Post-assembly processing</h1>
 
+<p><a href="/training-material/topics/assembly/tutorials/vgp_genome_assembly/tutorial.html#post-assembly-processing"><i class="fas fa-exchange-alt" aria-hidden="true"></i><span class="visually-hidden">exchange</span> Switch to long version</a></p>
+
 <p>An ideal haploid representation would consist of one allelic copy of all heterozygous regions in the two haplomes, as well as all hemizygous regions from both haplomes (<span class="citation"><a href="#Guan2019">Guan <i>et al.</i> 2019</a></span>). However, in highly heterozygous genomes, assembly algorithms are frequently not able to identify the highly divergent allelic sequences as belonging to the same region, resulting in the assembly of those regions as separate contigs. In order to prevent potential issues in <span class="notranslate">downstream</span> analysis, we are going to run the <strong>VGP purge assembly with purge_dups <span class="notranslate">workflow</span></strong>, which will allow to identify and reassign allelic contigs.</p>
 
 <blockquote class="notranslate hands_on">
@@ -1145,10 +1162,12 @@ dataset_03    https://zenodo.org/record/6098306/files/HiFi_synthetic_50x_03.fast
 
 <h1 id="hybrid-scaffolding-with-bionano-optical-maps">Hybrid scaffolding with Bionano optical maps</h1>
 
+<p><a href="/training-material/topics/assembly/tutorials/vgp_genome_assembly/tutorial.html#hybrid-scaffolding-using-bionano-data"><i class="fas fa-exchange-alt" aria-hidden="true"></i><span class="visually-hidden">exchange</span> Switch to long version</a></p>
+
 <p>Once the assemblies generated by <strong>hifiasm</strong> have been purged, the next step is to run the <strong>VGP hybrid scaffolding with Bionano optical maps <span class="notranslate">workflow</span></strong>. It will integrate the information provided by optical maps with primary assembly sequences in order to detect and correct structural variants, such as chimeric joins and misoriented contigs. In addition, this <span class="notranslate">workflow</span> includes some additonal steps for evaluating the outputs.</p>
 
 <blockquote class="notranslate hands_on">
-  <h3 id="hands_on-hands-on-vgp-scaffolding-with-bionano-optical-maps-workflow"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: VGP scaffolding with Bionano optical maps <span class="notranslate">workflow</span></h3>
+  <h3 id="hands_on-hands-on-vgp-hybrid-scaffolding-with-bionano-optical-maps-workflow"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="visually-hidden">hands_on</span> Hands-on: VGP hybrid scaffolding with Bionano optical maps <span class="notranslate">workflow</span></h3>
 
   <ol>
     <li>Click in the <strong><span class="notranslate">Workflow</span></strong> menu, located in the top bar</li>
@@ -1195,7 +1214,9 @@ dataset_03    https://zenodo.org/record/6098306/files/HiFi_synthetic_50x_03.fast
 
 </blockquote>
 
-<h1 id="scaffolding-with-hic-data">Scaffolding with HiC data</h1>
+<h1 id="hybrid-scaffolding-with-hi-c-data">Hybrid scaffolding with Hi-C data</h1>
+
+<p><a href="/training-material/topics/assembly/tutorials/vgp_genome_assembly/tutorial.html#hybrid-scaffolding-based-on-hi-c-mapping-data"><i class="fas fa-exchange-alt" aria-hidden="true"></i><span class="visually-hidden">exchange</span> Switch to long version</a></p>
 
 <p>In this final stage, we will run the <strong>VGP hybrid scaffolding with HiC data</strong>, which exploits the fact that the contact frequency between a pair of loci strongly correlates with the one-dimensional distance between them with the objective of linking the Bionano scaffolds on a chromosome scale by using <strong>SALSA2</strong>.</p>
 
@@ -1314,7 +1335,7 @@ dataset_03    https://zenodo.org/record/6098306/files/HiFi_synthetic_50x_03.fast
                 <h1>Citing this Tutorial</h1>
                 <p>
                     <ol>
-                        <li id="citation-text">Delphine Lariviere, Alex Ostrovsky, Cristóbal Gallardo, Brandon Pickett, 2022 <b>VGP assembly pipeline - short version (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/assembly/tutorials/vgp_workflow_training/tutorial.html">https://training.galaxyproject.org/training-material/topics/assembly/tutorials/vgp_workflow_training/tutorial.html</a> Online; accessed TODAY
+                        <li id="citation-text">Delphine Lariviere, Alex Ostrovsky, Cristóbal Gallardo, Brandon Pickett, Linelle Abueg, 2022 <b>VGP assembly pipeline - short version (Galaxy Training Materials)</b>. <a href="https://training.galaxyproject.org/training-material/topics/assembly/tutorials/vgp_workflow_training/tutorial.html">https://training.galaxyproject.org/training-material/topics/assembly/tutorials/vgp_workflow_training/tutorial.html</a> Online; accessed TODAY
                         </li>
                         <li>
                         Batut et al., 2018 <b>Community-Driven Data Analysis Training for Biology</b> Cell Systems <a href="https://doi.org/10.1016%2Fj.cels.2018.05.012">10.1016/j.cels.2018.05.012</a>
@@ -1329,11 +1350,11 @@ dataset_03    https://zenodo.org/record/6098306/files/HiFi_synthetic_50x_03.fast
 
                 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight">
 <code id="citation-code">@misc{assembly-vgp_workflow_training,
-author = "Delphine Lariviere and Alex Ostrovsky and Cristóbal Gallardo and Brandon Pickett",
+author = "Delphine Lariviere and Alex Ostrovsky and Cristóbal Gallardo and Brandon Pickett and Linelle Abueg",
 title = "VGP assembly pipeline - short version (Galaxy Training Materials)",
 year = "2022",
 month = "04",
-day = "07"
+day = "10"
 url = "\url{https://training.galaxyproject.org/training-material/topics/assembly/tutorials/vgp_workflow_training/tutorial.html}",
 note = "[Online; accessed TODAY]"
 }

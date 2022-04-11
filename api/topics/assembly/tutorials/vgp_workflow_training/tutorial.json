@@ -49,9 +49,15 @@
       "joined": "2022-01",
       "id": "pickettbd",
       "url": "https://training.galaxyproject.org/training-material/api/contributors/pickettbd.json"
+    },
+    {
+      "name": "Linelle Abueg",
+      "joined": "2022-01",
+      "id": "abueg",
+      "url": "https://training.galaxyproject.org/training-material/api/contributors/abueg.json"
     }
   ],
-  "last_modified_at": "07-Apr-22",
+  "last_modified_at": "10-Apr-22",
   "url": "/topics/assembly/tutorials/vgp_workflow_training/tutorial.html",
   "topic_name": "assembly",
   "tutorial_name": "vgp_workflow_training",
