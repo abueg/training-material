@@ -276,7 +276,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "1970-01-01 00:00:10 +0000",
+  "dateModified": "1970-01-01 00:00:11 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "VGP assembly pipeline - short version",
   "interactivityType": "mixed",
@@ -312,7 +312,7 @@
   "name": "Hands-on for 'VGP assembly pipeline - short version' tutorial",
   "url": "https://training.galaxyproject.org//training-material/topics/assembly/tutorials/vgp_workflow_training/tutorial.html",
   "timeRequired": "PT1H",
-  "keywords": "pacbio, eukaryote, VGP, work-in-progress",
+  "keywords": "pacbio, eukaryote, VGP",
   "description": "The questions this  addresses are:\n - what combination of tools can produce the highest quality assembly of vertebrate genomes?\n - How can we evaluate how good it is?\n\n\\nThe objectives are:\n - Learn the tools necessary to perform a de novo assembly of a vertebrate genome\n - Evaluate the quality of the assembly\n\n",
   "inLanguage": {
     "@type": "Language",
@@ -422,12 +422,6 @@
 
 <section class="tutorial topic-assembly">
     <h1 data-toc-skip>VGP assembly pipeline - short version</h1>
-    
-    <div class="alert alert-warning" role="alert">
-        <h4 class="alert-heading">Under Development!</h4>
-        <p>This tutorial is not in its final state. The content may change a lot in the next months.
-        Because of this status, it is also not listed in the topic pages.</p>
-    </div>
     
 
 
@@ -783,6 +777,12 @@
         
     
         
+        <a class="dropdown-item" href="https://usegalaxy.org.au" title="UseGalaxy.org.au">
+            UseGalaxy.org.au
+        </a>
+        
+    
+        
     
         
     
@@ -798,7 +798,7 @@
         </ul>
         
 
-        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Apr 10, 2022 </div>
+        <div><strong><i class="far fa-calendar" aria-hidden="true"></i> Last modification:</strong> Apr 11, 2022 </div>
         <div><strong><i class="fas fa-balance-scale" aria-hidden="true"></i> License:</strong>
             
             <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Tutorial Content is licensed under Creative Commons Attribution 4.0 International License</a>
@@ -1129,7 +1129,7 @@ dataset_03    https://zenodo.org/record/6098306/files/HiFi_synthetic_50x_03.fast
 
 <p>The spectra-cn plot looks at both of your assemblies (here, your haplotypes) taken <em>together</em>. Thus, we know there is some false duplication (the 3-copy green bump) present as 2-copy in one of our assemblies, but we don’t know which one. We can look at the individual copy number spectrum for each haplotype in order to figure out which one contains the 2-copy k-mers (<em>i.e.</em>, the false duplications).</p>
 
-<figure id="figure-7"><img src="../../images/vgp_assembly/yeast_c_merqury_hap2.png" alt="Figure 7: Merqury spectra-hap2 plot for initial yeast contigs. " width="80%" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 7:</span> Merqury spectra-CN plot for hap2. One can see the small bump of 2-copy k-mers at around the 50 mark on the x-axis.</figcaption></figure>
+<figure id="figure-7"><img src="../../images/vgp_assembly/yeast_c_merqury_hap2.png" alt="Figure 8: Merqury spectra-hap2 plot for initial yeast contigs. " width="80%" loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 7:</span> Merqury spectra-CN plot for hap2. One can see the small bump of 2-copy k-mers at around the 50 mark on the x-axis.</figcaption></figure>
 
 <p>Now that we know which haplotype contains the false duplications, we can run the purging <span class="notranslate">workflow</span> to try to get rid of these duplicates.</p>
 
@@ -1186,11 +1186,11 @@ dataset_03    https://zenodo.org/record/6098306/files/HiFi_synthetic_50x_03.fast
 
 <p>Once the workfow has finished, let’s have a look at the assembly reports.</p>
 
-<p>As we can observe in the cumulative plot of the file <code class="language-plaintext highlighter-rouge">119</code> (fig. 7a), the total length of the assembly (12.160.926 bp) is slightly larger than the expected genome size. With respect to the NG50 statistic (fig. 10b), the value is 922.430 bp, which is significantly higher than the value obtained during the first evaluation stage (813.039 bp). This increase in NG50 means this scaffolded assembly is more contiguous compared to the non-scaffolded contigs.</p>
+<p>As we can observe in the cumulative plot of the file <code class="language-plaintext highlighter-rouge">119</code> (fig. 8a), the total length of the assembly (12.160.926 bp) is slightly larger than the expected genome size. With respect to the NG50 statistic (fig. 8b), the value is 922.430 bp, which is significantly higher than the value obtained during the first evaluation stage (813.039 bp). This increase in NG50 means this scaffolded assembly is more contiguous compared to the non-scaffolded contigs.</p>
 
-<figure id="figure-8"><img src="../../images/vgp_assembly/QUAST_cummulative.png" alt="Figure 10: QUAST and BUSCO plots. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 8:</span> . Cumulative length plot (a). NGx plot. The y-axis represents the NGx values in Mbp, and the x-axis is the percentage of the genome (b). Assembly evaluation after runnig Bionano. BUSCO genes are defined as "Complete (C) and single copy (S)" when found once in the single-copy ortholog database, "Complete (C) and duplicated (D)" when found more than once, "Fragmented (F)" when genes are matching just partially, and "Missing (M)" when genes were expected but not detected (c).</figcaption></figure>
+<figure id="figure-8"><img src="../../images/vgp_assembly/QUAST_cummulative.png" alt="Figure 9: QUAST and BUSCO plots. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 8:</span> . Cumulative length plot (a). NGx plot. The y-axis represents the NGx values in Mbp, and the x-axis is the percentage of the genome (b). Assembly evaluation after runnig Bionano. BUSCO genes are defined as "Complete (C) and single copy (S)" when found once in the single-copy ortholog database, "Complete (C) and duplicated (D)" when found more than once, "Fragmented (F)" when genes are matching just partially, and "Missing (M)" when genes were expected but not detected (c).</figcaption></figure>
 
-<p>It is also recommended to examine <strong>BUSCO</strong> outputs. In the summary image (fig. 7c), which can be found in the daset <code class="language-plaintext highlighter-rouge">117</code>, we can appreciate that most of the universal single-copy orthologs are present in our assembly at the expected single-copy.</p>
+<p>It is also recommended to examine <strong>BUSCO</strong> outputs. In the summary image (fig. 8c), which can be found in the daset <code class="language-plaintext highlighter-rouge">117</code>, we can appreciate that most of the universal single-copy orthologs are present in our assembly at the expected single-copy.</p>
 
 <blockquote class="question">
   <h3 id="question-questions-2"><i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Questions</h3>
@@ -1239,9 +1239,9 @@ dataset_03    https://zenodo.org/record/6098306/files/HiFi_synthetic_50x_03.fast
   </ol>
 </blockquote>
 
-<p>In order to evaluate the Hi-C hybrid scaffolding, we are going to compare the contact maps before and after running the HiC hybrid scaffolding <span class="notranslate">workflow</span> (fig. 8), corresponding to the datasets <code class="language-plaintext highlighter-rouge">130</code> and <code class="language-plaintext highlighter-rouge">141</code> respectively.</p>
+<p>In order to evaluate the Hi-C hybrid scaffolding, we are going to compare the contact maps before and after running the HiC hybrid scaffolding <span class="notranslate">workflow</span> (fig. 9), corresponding to the datasets <code class="language-plaintext highlighter-rouge">130</code> and <code class="language-plaintext highlighter-rouge">141</code> respectively.</p>
 
-<figure id="figure-9"><img src="../../images/vgp_assembly/hi-c_pretext_final.png" alt="Figure 8: Pretext final contact map. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 9:</span> Hi-C maps generated by Pretext using Hi-C data. The red circles indicate the  differences between the contact maps generated after (a) and before (b) Hi-C hybrid scaffolding.</figcaption></figure>
+<figure id="figure-9"><img src="../../images/vgp_assembly/hi-c_pretext_final.png" alt="Figure 10: Pretext final contact map. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 9:</span> Hi-C maps generated by Pretext using Hi-C data. The red circles indicate the  differences between the contact maps generated after (a) and before (b) Hi-C hybrid scaffolding.</figcaption></figure>
 
 <p>The regions marked with red circles highlight the most notable difference between the two contact maps, where inversion has been fixed.</p>
 
@@ -1251,11 +1251,11 @@ dataset_03    https://zenodo.org/record/6098306/files/HiFi_synthetic_50x_03.fast
 
 <figure id="figure-10"><img src="../../images/vgp_assembly/stats_conclusion.png" alt="Table 1: Final stats. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 10:</span> Comparison between the final assembly generated in this training and the reference genome. Contiguity plot using the reference genome size (a). Assemby statistics (b).</figcaption></figure>
 
-<p>With respect to the total sequence length, we can conclude that the size of our genome assembly is almost identical to the reference genome (fig.16a,b). It is noteworthy that the reference genome consists of 17 sequences, while our assembly includes only 16 chromosomes. This is due to the fact that the reference genome also includes the sequence of the mitochondrial <span class="notranslate">DNA</span>, which consists of 85,779 bp. The remaining statistics exhibit very similar values (fig. 16b).</p>
+<p>With respect to the total sequence length, we can conclude that the size of our genome assembly is almost identical to the reference genome (fig.10a,b). It is noteworthy that the reference genome consists of 17 sequences, while our assembly includes only 16 chromosomes. This is due to the fact that the reference genome also includes the sequence of the mitochondrial <span class="notranslate">DNA</span>, which consists of 85,779 bp. The remaining statistics exhibit very similar values (fig. 10b).</p>
 
-<figure id="figure-11"><img src="../../images/vgp_assembly/hi-c_pretext_conclusion.png" alt="Figure 16: Comparison reference genome. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 11:</span> Comparison between contact maps generated using the final assembly (a) and the reference genome (b).</figcaption></figure>
+<figure id="figure-11"><img src="../../images/vgp_assembly/hi-c_pretext_conclusion.png" alt="Figure 11: Comparison reference genome. " loading="lazy" /><figcaption><span class="figcaption-prefix">Figure 11:</span> Comparison between contact maps generated using the final assembly (a) and the reference genome (b).</figcaption></figure>
 
-<p>If we compare the contact map of our assembled genome (fig. 17a) with the reference assembly (fig. 17b), we can see that the two are essentially identical. This means that we have achieved an almost perfect assembly at the chromosome level.</p>
+<p>If we compare the contact map of our assembled genome (fig. 11a) with the reference assembly (fig. 11b), we can see that the two are essentially identical. This means that we have achieved an almost perfect assembly at the chromosome level.</p>
 
 <h1 id="references">References</h1>
 <ol class="bibliography"><li id="Simo2015">Simão, F. A., R. M. Waterhouse, P. Ioannidis, E. V. Kriventseva, and E. M. Zdobnov, 2015 <b>BUSCO: assessing genome assembly and annotation completeness with single-copy orthologs</b>. Bioinformatics 31: 3210–3212. <a href="https://doi.org/10.1093/bioinformatics/btv351">10.1093/bioinformatics/btv351</a></li>
@@ -1354,7 +1354,7 @@ author = "Delphine Lariviere and Alex Ostrovsky and Cristóbal Gallardo and Bran
 title = "VGP assembly pipeline - short version (Galaxy Training Materials)",
 year = "2022",
 month = "04",
-day = "10"
+day = "11"
 url = "\url{https://training.galaxyproject.org/training-material/topics/assembly/tutorials/vgp_workflow_training/tutorial.html}",
 note = "[Online; accessed TODAY]"
 }
