@@ -18,15 +18,26 @@
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
 
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
+<meta name="DC.type" content="text" />
+<meta name="DC.title" content="Running molecular dynamics simulations using NAMD" />
+<meta name="DC.publisher" content="Galaxy Training Network" />
+<meta name="DC.date" content="1970-01-01 00:00:12 +0000" />
+<meta name="DC.creator" content="Christopher Barnett" />
+<meta name="DC.creator" content="Tharindu Senapathi" />
+<meta name="DC.creator" content="Simon Bray" />
+
         
         
         
         
         
         <meta name="description" content="Modelling, simulation and analysis of biomolecular systems" />
+        <meta property="og:site_name" content="Galaxy Training Network" />
         <meta property="og:title" content="Galaxy Training: Running molecular dynamics simulations using NAMD" />
         <meta property="og:description" content="Modelling, simulation and analysis of biomolecular systems" />
         <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+
     </head>
     <body data-spy="scroll" data-target="#toc">
         <header>
@@ -243,7 +254,11 @@
 
 {
   "@context": "http://schema.org",
-  "@type": "Course",
+  "@type": "LearningResource",
+  "http://purl.org/dc/terms/conformsTo": {
+    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
+    "@type": "CreativeWork"
+  },
   "accessMode": [
     "textual",
     "visual"
@@ -260,10 +275,10 @@
     "alternativeText",
     "tableOfContents"
   ],
-  "accessibilitySummary": "Short descriptions are present but long descriptions will be needed for non-visual users",
+  "accessibilitySummary": "The text aims to be as accessible as possible. Image descriptions will vary per tutorial, from images being completely inaccessible, to images with good descriptions for non-visual users.",
   "audience": {
     "@type": "EducationalAudience",
-    "educationalRole": "students"
+    "educationalRole": "Students"
   },
   "citation": {
     "@type": "CreativeWork",
@@ -301,26 +316,28 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
+  "identifier": "https://github.com/galaxyproject/training-material",
   "isPartOf": {
     "@type": "CreativeWork",
     "name": "Computational chemistry",
     "description": "Modelling, simulation and analysis of biomolecular systems",
     "url": "https://training.galaxyproject.org//training-material/topics/computational-chemistry/"
   },
-  "courseCode": "computational-chemistry / md-simulation-namd / hands-on",
   "learningResourceType": "hands-on tutorial",
   "name": "Hands-on for 'Running molecular dynamics simulations using NAMD' tutorial",
   "url": "https://training.galaxyproject.org//training-material/topics/computational-chemistry/tutorials/md-simulation-namd/tutorial.html",
   "timeRequired": "PT3H",
+  "keywords": "computational-chemistry",
   "description": "The questions this  addresses are:\n - How do I use the NAMD engine in Galaxy?\n - What is the correct procedure for performing a simple molecular dynamics simulation of a protein?\n\n\\nThe objectives are:\n - Learn about the NAMD engine provided in BRIDGE\n\n",
   "inLanguage": {
     "@type": "Language",
     "name": "English",
     "alternateName": "en"
   },
-  "coursePrerequisites": [
+  "competencyRequired": [
     {
-      "@type": "CreativeWork",
+      "@context": "http://schema.org",
+      "@type": "LearningResource",
       "url": "https://training.galaxyproject.org//training-material/topics/introduction/",
       "name": "Introduction to Galaxy Analyses",
       "description": "Introduction to Galaxy Analyses",
@@ -332,7 +349,8 @@
       }
     },
     {
-      "@type": "Course",
+      "@context": "http://schema.org",
+      "@type": "LearningResource",
       "url": "https://training.galaxyproject.org//training-material/topics/computational-chemistry/tutorials/setting-up-molecular-systems/tutorial.html",
       "name": "Setting up molecular systems",
       "description": "Hands-on for 'Setting up molecular systems' tutorial",
@@ -346,35 +364,134 @@
       }
     }
   ],
-  "hasPart": [
-
-  ],
   "author": [
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Christopher Barnett"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/chrisbarnettster/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/chrisbarnettster/",
+      "name": "Christopher Barnett",
+      "image": "https://avatars.githubusercontent.com/chrisbarnettster",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Tharindu Senapathi"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/tsenapathi/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/tsenapathi/",
+      "name": "Tharindu Senapathi",
+      "image": "https://avatars.githubusercontent.com/tsenapathi",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Simon Bray"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/simonbray/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/simonbray/",
+      "name": "Simon Bray",
+      "image": "https://avatars.githubusercontent.com/simonbray",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     }
   ],
   "contributor": [
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Christopher Barnett"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/chrisbarnettster/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/chrisbarnettster/",
+      "name": "Christopher Barnett",
+      "image": "https://avatars.githubusercontent.com/chrisbarnettster",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Tharindu Senapathi"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/tsenapathi/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/tsenapathi/",
+      "name": "Tharindu Senapathi",
+      "image": "https://avatars.githubusercontent.com/tsenapathi",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Simon Bray"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/simonbray/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/simonbray/",
+      "name": "Simon Bray",
+      "image": "https://avatars.githubusercontent.com/simonbray",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     }
   ],
   "about": [
@@ -385,7 +502,7 @@
       "url": "https://training.galaxyproject.org//training-material/topics/computational-chemistry/"
     }
   ],
-  "skillLevel": "Intermediate"
+  "educationalLevel": "Intermediate"
 }
 </script>
 
@@ -399,18 +516,23 @@
     </div>
     
 
+    <div markdown="0">
 
-    <div class="contributors-line">Authors: 
+	<div class="contributors-line">
+		Authors: 
 <a href="/training-material/hall-of-fame/chrisbarnettster/" class="contributor-badge contributor-chrisbarnettster"><img src="https://avatars.githubusercontent.com/chrisbarnettster?s=27" alt="Avatar">Christopher Barnett</a>
+
 
 
 <a href="/training-material/hall-of-fame/tsenapathi/" class="contributor-badge contributor-tsenapathi"><img src="https://avatars.githubusercontent.com/tsenapathi?s=27" alt="Avatar">Tharindu Senapathi</a>
 
 
+
 <a href="/training-material/hall-of-fame/simonbray/" class="contributor-badge contributor-simonbray"><img src="https://avatars.githubusercontent.com/simonbray?s=27" alt="Avatar">Simon Bray</a>
 
 
-<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
+
+	</div>
 
 </div>
 
@@ -573,6 +695,8 @@
 
 
 
+
+
   
 
 
@@ -582,7 +706,7 @@
 
 
     <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
-        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span> Available on these Galaxies 
+        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>&nbsp;Available on these Galaxies 
     </a>
     <ul class="dropdown-menu">
     
@@ -1248,9 +1372,12 @@ https://zenodo.org/record/3234841/files/cbh1test.psf
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
                 
+
+                
                 <h1 data-toc-skip>Useful literature</h1>
                 <p>Further information, including links to documentation and original publications, regarding the tools, analysis techniques and the interpretation of results described in this tutorial can be found <a href="/training-material/topics/computational-chemistry#references">here</a>.</p>
                 
+
 
                 
 
@@ -1288,8 +1415,6 @@ https://zenodo.org/record/3234841/files/cbh1test.psf
                         });
                     })(window, document);
                 </script>
-
-
 
                 <h1>Citing this Tutorial</h1>
                 <p>
@@ -1333,6 +1458,8 @@ note = "[Online; accessed TODAY]"
                 </pre></div></div>
                 </p>
                 </blockquote>
+
+                
 
 
 <script type="text/javascript">

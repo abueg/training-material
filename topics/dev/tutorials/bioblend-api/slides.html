@@ -37,7 +37,11 @@
 
 {
   "@context": "http://schema.org",
-  "@type": "Course",
+  "@type": "LearningResource",
+  "http://purl.org/dc/terms/conformsTo": {
+    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
+    "@type": "CreativeWork"
+  },
   "accessMode": [
     "textual",
     "visual"
@@ -54,10 +58,10 @@
     "alternativeText",
     "tableOfContents"
   ],
-  "accessibilitySummary": "Short descriptions are present but long descriptions will be needed for non-visual users",
+  "accessibilitySummary": "The text aims to be as accessible as possible. Image descriptions will vary per tutorial, from images being completely inaccessible, to images with good descriptions for non-visual users.",
   "audience": {
     "@type": "EducationalAudience",
-    "educationalRole": "students"
+    "educationalRole": "Students"
   },
   "citation": {
     "@type": "CreativeWork",
@@ -95,67 +99,205 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
+  "identifier": "https://github.com/galaxyproject/training-material",
   "isPartOf": {
     "@type": "CreativeWork",
     "name": "Development in Galaxy",
     "description": "Galaxy is an open-source project. Everyone can contribute to its development with core Galaxy development, integration of softwares in Galaxy environment, ...",
     "url": "https://training.galaxyproject.org//training-material/topics/dev/"
   },
-  "courseCode": "dev / bioblend-api / slides",
   "learningResourceType": "slides",
   "name": "Slides for 'Scripting Galaxy using the API and BioBlend' tutorial",
   "url": "https://training.galaxyproject.org//training-material/topics/dev/tutorials/bioblend-api/slides.html",
   "timeRequired": "PT2H",
+  "keywords": "dev",
   "description": "The questions this  addresses are:\n - What is a REST API?\n - How to interact with Galaxy programmatically?\n - Why and when should I use BioBlend?\n\n",
   "inLanguage": {
     "@type": "Language",
     "name": "English",
     "alternateName": "en"
   },
-  "coursePrerequisites": [
+  "competencyRequired": [
     {
       "@type": "CreativeWork",
       "url": "https://ipython.org",
       "name": "IPython"
     }
   ],
-  "hasPart": [
-
-  ],
   "author": [
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Olivia Doppelt-Azeroual"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/odoppelt/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/odoppelt/",
+      "name": "Olivia Doppelt-Azeroual",
+      "image": "https://avatars.githubusercontent.com/odoppelt",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Fabien Mareuil"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/fmareuil/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/fmareuil/",
+      "name": "Fabien Mareuil",
+      "image": "https://avatars.githubusercontent.com/fmareuil",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Nicola Soranzo"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/nsoranzo/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/nsoranzo/",
+      "name": "Nicola Soranzo",
+      "image": "https://avatars.githubusercontent.com/nsoranzo",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ],
+      "identifier": "https://orcid.org/0000-0003-3627-5340",
+      "orcid": "https://orcid.org/0000-0003-3627-5340"
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Dannon Baker"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/dannon/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/dannon/",
+      "name": "Dannon Baker",
+      "image": "https://avatars.githubusercontent.com/dannon",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     }
   ],
   "contributor": [
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Olivia Doppelt-Azeroual"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/odoppelt/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/odoppelt/",
+      "name": "Olivia Doppelt-Azeroual",
+      "image": "https://avatars.githubusercontent.com/odoppelt",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Fabien Mareuil"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/fmareuil/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/fmareuil/",
+      "name": "Fabien Mareuil",
+      "image": "https://avatars.githubusercontent.com/fmareuil",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Nicola Soranzo"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/nsoranzo/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/nsoranzo/",
+      "name": "Nicola Soranzo",
+      "image": "https://avatars.githubusercontent.com/nsoranzo",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ],
+      "identifier": "https://orcid.org/0000-0003-3627-5340",
+      "orcid": "https://orcid.org/0000-0003-3627-5340"
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Dannon Baker"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/dannon/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/dannon/",
+      "name": "Dannon Baker",
+      "image": "https://avatars.githubusercontent.com/dannon",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     }
   ],
   "about": [
@@ -198,23 +340,27 @@ class: center, middle, inverse
 
 # Scripting Galaxy using the API and BioBlend
 
+<div markdown="0">
 
-<div class="contributors-line">
-
+	<div class="contributors-line">
+		Authors: 
 <a href="/training-material/hall-of-fame/odoppelt/" class="contributor-badge contributor-odoppelt"><img src="https://avatars.githubusercontent.com/odoppelt?s=27" alt="Avatar">Olivia Doppelt-Azeroual</a>
+
 
 
 <a href="/training-material/hall-of-fame/fmareuil/" class="contributor-badge contributor-fmareuil"><img src="https://avatars.githubusercontent.com/fmareuil?s=27" alt="Avatar">Fabien Mareuil</a>
 
 
+
 <a href="/training-material/hall-of-fame/nsoranzo/" class="contributor-badge contributor-nsoranzo"><img src="https://avatars.githubusercontent.com/nsoranzo?s=27" alt="Avatar">Nicola Soranzo</a>
+
 
 
 <a href="/training-material/hall-of-fame/dannon/" class="contributor-badge contributor-dannon"><img src="https://avatars.githubusercontent.com/dannon?s=27" alt="Avatar">Dannon Baker</a>
 
 
-<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
 
+	</div>
 
 </div>
 
@@ -715,27 +861,37 @@ Exercises:
 
 This material is the result of a collaborative work. Thanks to the [Galaxy Training Network](https://training.galaxyproject.org) and all the contributors!
 
+<div markdown="0">
 
-<div class="contributors-line">
-
+	<div class="contributors-line">
+		Authors: 
 <a href="/training-material/hall-of-fame/odoppelt/" class="contributor-badge contributor-odoppelt"><img src="https://avatars.githubusercontent.com/odoppelt?s=27" alt="Avatar">Olivia Doppelt-Azeroual</a>
+
 
 
 <a href="/training-material/hall-of-fame/fmareuil/" class="contributor-badge contributor-fmareuil"><img src="https://avatars.githubusercontent.com/fmareuil?s=27" alt="Avatar">Fabien Mareuil</a>
 
 
+
 <a href="/training-material/hall-of-fame/nsoranzo/" class="contributor-badge contributor-nsoranzo"><img src="https://avatars.githubusercontent.com/nsoranzo?s=27" alt="Avatar">Nicola Soranzo</a>
+
 
 
 <a href="/training-material/hall-of-fame/dannon/" class="contributor-badge contributor-dannon"><img src="https://avatars.githubusercontent.com/dannon?s=27" alt="Avatar">Dannon Baker</a>
 
 
+
+	</div>
+
 </div>
 
 
+<div style="display: flex;flex-direction: row;align-items: center;justify-content: center;">
 
 <img src="/training-material/assets/images/GTN.png" alt="Galaxy Training Network" style="height: 100px;"/>
 
+
+</div>
 
 <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
 This material is licensed under the Creative Commons Attribution 4.0 International License</a>.

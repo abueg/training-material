@@ -18,15 +18,28 @@
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
 
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
+<meta name="DC.type" content="text" />
+<meta name="DC.title" content="metaQuantome 1: Data creation" />
+<meta name="DC.publisher" content="Galaxy Training Network" />
+<meta name="DC.date" content="1970-01-01 00:00:10 +0000" />
+<meta name="DC.creator" content="Subina Mehta" />
+<meta name="DC.creator" content="Timothy J. Griffin" />
+<meta name="DC.creator" content="Pratik Jagtap" />
+<meta name="DC.creator" content="Emma Leith" />
+<meta name="DC.creator" content="Marie Crane" />
+
         
         
         
         
         
         <meta name="description" content="Training material for proteomics workflows in Galaxy" />
+        <meta property="og:site_name" content="Galaxy Training Network" />
         <meta property="og:title" content="Galaxy Training: metaQuantome 1: Data creation" />
         <meta property="og:description" content="Training material for proteomics workflows in Galaxy" />
         <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+
     </head>
     <body data-spy="scroll" data-target="#toc">
         <header>
@@ -243,7 +256,11 @@
 
 {
   "@context": "http://schema.org",
-  "@type": "Course",
+  "@type": "LearningResource",
+  "http://purl.org/dc/terms/conformsTo": {
+    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
+    "@type": "CreativeWork"
+  },
   "accessMode": [
     "textual",
     "visual"
@@ -260,10 +277,10 @@
     "alternativeText",
     "tableOfContents"
   ],
-  "accessibilitySummary": "Short descriptions are present but long descriptions will be needed for non-visual users",
+  "accessibilitySummary": "The text aims to be as accessible as possible. Image descriptions will vary per tutorial, from images being completely inaccessible, to images with good descriptions for non-visual users.",
   "audience": {
     "@type": "EducationalAudience",
-    "educationalRole": "students"
+    "educationalRole": "Students"
   },
   "citation": {
     "@type": "CreativeWork",
@@ -301,27 +318,28 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
+  "identifier": "https://github.com/galaxyproject/training-material",
   "isPartOf": {
     "@type": "CreativeWork",
     "name": "Proteomics",
     "description": "Training material for proteomics workflows in Galaxy",
     "url": "https://training.galaxyproject.org//training-material/topics/proteomics/"
   },
-  "courseCode": "proteomics / metaquantome-data-creation / hands-on",
   "learningResourceType": "hands-on tutorial",
   "name": "Hands-on for 'metaQuantome 1: Data creation' tutorial",
   "url": "https://training.galaxyproject.org//training-material/topics/proteomics/tutorials/metaquantome-data-creation/tutorial.html",
   "timeRequired": "PT1H",
-  "keywords": "microbiome",
+  "keywords": "proteomics, microbiome",
   "description": "The questions this  addresses are:\n - How do I perform functional and taxonomy analysis on metaproteomics data?\n - How can I perform quantitation on metaproteomics data?\n - How do I create inputs that can be used in metaquantome to examine differentially expressed proteins?\n\n\\nThe objectives are:\n - A taxonomy, functional and quantitational analysis of metaproteomic mass spectrometry data.\n\n",
   "inLanguage": {
     "@type": "Language",
     "name": "English",
     "alternateName": "en"
   },
-  "coursePrerequisites": [
+  "competencyRequired": [
     {
-      "@type": "CreativeWork",
+      "@context": "http://schema.org",
+      "@type": "LearningResource",
       "url": "https://training.galaxyproject.org//training-material/topics/introduction/",
       "name": "Introduction to Galaxy Analyses",
       "description": "Introduction to Galaxy Analyses",
@@ -333,51 +351,222 @@
       }
     }
   ],
-  "hasPart": [
-
-  ],
   "author": [
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Subina Mehta"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/subinamehta/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/subinamehta/",
+      "name": "Subina Mehta",
+      "image": "https://avatars.githubusercontent.com/subinamehta",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ],
+      "identifier": "https://orcid.org/0000-0001-9818-0537",
+      "orcid": "https://orcid.org/0000-0001-9818-0537"
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Timothy J. Griffin"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/timothygriffin/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/timothygriffin/",
+      "name": "Timothy J. Griffin",
+      "image": "https://avatars.githubusercontent.com/timothygriffin",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Pratik Jagtap"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/pratikdjagtap/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/pratikdjagtap/",
+      "name": "Pratik Jagtap",
+      "image": "https://avatars.githubusercontent.com/pratikdjagtap",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Emma Leith"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/emmaleith/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/emmaleith/",
+      "name": "Emma Leith",
+      "image": "https://avatars.githubusercontent.com/emmaleith",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Marie Crane"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/mariecrane/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/mariecrane/",
+      "name": "Marie Crane",
+      "image": "https://avatars.githubusercontent.com/mariecrane",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     }
   ],
   "contributor": [
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Subina Mehta"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/subinamehta/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/subinamehta/",
+      "name": "Subina Mehta",
+      "image": "https://avatars.githubusercontent.com/subinamehta",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ],
+      "identifier": "https://orcid.org/0000-0001-9818-0537",
+      "orcid": "https://orcid.org/0000-0001-9818-0537"
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Timothy J. Griffin"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/timothygriffin/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/timothygriffin/",
+      "name": "Timothy J. Griffin",
+      "image": "https://avatars.githubusercontent.com/timothygriffin",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Pratik Jagtap"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/pratikdjagtap/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/pratikdjagtap/",
+      "name": "Pratik Jagtap",
+      "image": "https://avatars.githubusercontent.com/pratikdjagtap",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Emma Leith"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/emmaleith/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/emmaleith/",
+      "name": "Emma Leith",
+      "image": "https://avatars.githubusercontent.com/emmaleith",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Marie Crane"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/mariecrane/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/mariecrane/",
+      "name": "Marie Crane",
+      "image": "https://avatars.githubusercontent.com/mariecrane",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     }
   ],
   "about": [
@@ -395,7 +584,7 @@
       "url": "https://bioportal.bioontology.org/ontologies/EDAM/?p=classes&conceptid=http%3A%2F%2Fedamontology.org%2Ftopic_0121"
     }
   ],
-  "skillLevel": "Intermediate"
+  "educationalLevel": "Intermediate"
 }
 </script>
 
@@ -403,24 +592,31 @@
     <h1 data-toc-skip>metaQuantome 1: Data creation</h1>
     
 
+    <div markdown="0">
 
-    <div class="contributors-line">Authors: 
+	<div class="contributors-line">
+		Authors: 
 <a href="/training-material/hall-of-fame/subinamehta/" class="contributor-badge contributor-subinamehta"><img src="https://avatars.githubusercontent.com/subinamehta?s=27" alt="Avatar">Subina Mehta</a>
+
 
 
 <a href="/training-material/hall-of-fame/timothygriffin/" class="contributor-badge contributor-timothygriffin"><img src="https://avatars.githubusercontent.com/timothygriffin?s=27" alt="Avatar">Timothy J. Griffin</a>
 
 
+
 <a href="/training-material/hall-of-fame/pratikdjagtap/" class="contributor-badge contributor-pratikdjagtap"><img src="https://avatars.githubusercontent.com/pratikdjagtap?s=27" alt="Avatar">Pratik Jagtap</a>
+
 
 
 <a href="/training-material/hall-of-fame/emmaleith/" class="contributor-badge contributor-emmaleith"><img src="https://avatars.githubusercontent.com/emmaleith?s=27" alt="Avatar">Emma Leith</a>
 
 
+
 <a href="/training-material/hall-of-fame/mariecrane/" class="contributor-badge contributor-mariecrane"><img src="https://avatars.githubusercontent.com/mariecrane?s=27" alt="Avatar">Marie Crane</a>
 
 
-<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
+
+	</div>
 
 </div>
 
@@ -549,6 +745,8 @@
 
 
 
+
+
   
 
 
@@ -558,7 +756,7 @@
 
 
     <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
-        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span> Available on these Galaxies 
+        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>&nbsp;Available on these Galaxies 
     </a>
     <ul class="dropdown-menu">
     
@@ -1698,9 +1896,12 @@ FROM ec</code></li>
                 <a href="https://help.galaxyproject.org">Galaxy Help Forum</a>
 
                 
+
+                
                 <h1 data-toc-skip>Useful literature</h1>
                 <p>Further information, including links to documentation and original publications, regarding the tools, analysis techniques and the interpretation of results described in this tutorial can be found <a href="/training-material/topics/proteomics#references">here</a>.</p>
                 
+
 
                 
                 <h1 id="bibliography">References</h1>
@@ -1746,8 +1947,6 @@ FROM ec</code></li>
                     })(window, document);
                 </script>
 
-
-
                 <h1>Citing this Tutorial</h1>
                 <p>
                     <ol>
@@ -1790,6 +1989,8 @@ note = "[Online; accessed TODAY]"
                 </pre></div></div>
                 </p>
                 </blockquote>
+
+                
 
 
 <script type="text/javascript">

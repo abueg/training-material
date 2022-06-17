@@ -18,15 +18,25 @@
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
 
+        <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
+<meta name="DC.type" content="text" />
+<meta name="DC.title" content="DNA Methylation data analysis" />
+<meta name="DC.publisher" content="Galaxy Training Network" />
+<meta name="DC.date" content="1970-01-01 00:00:25 +0000" />
+<meta name="DC.creator" content="Joachim Wolff" />
+<meta name="DC.creator" content="Devon Ryan" />
+
         
         
         
         
         
         <meta name="description" content="DNA methylation is an epigenetic mechanism used by higher..." />
+        <meta property="og:site_name" content="Galaxy Training Network" />
         <meta property="og:title" content="Galaxy Training: DNA Methylation data analysis" />
         <meta property="og:description" content="DNA methylation is an epigenetic mechanism used by higher..." />
         <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+
     </head>
     <body data-spy="scroll" data-target="#toc">
         <header>
@@ -243,7 +253,11 @@
 
 {
   "@context": "http://schema.org",
-  "@type": "Course",
+  "@type": "LearningResource",
+  "http://purl.org/dc/terms/conformsTo": {
+    "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
+    "@type": "CreativeWork"
+  },
   "accessMode": [
     "textual",
     "visual"
@@ -260,10 +274,10 @@
     "alternativeText",
     "tableOfContents"
   ],
-  "accessibilitySummary": "Short descriptions are present but long descriptions will be needed for non-visual users",
+  "accessibilitySummary": "The text aims to be as accessible as possible. Image descriptions will vary per tutorial, from images being completely inaccessible, to images with good descriptions for non-visual users.",
   "audience": {
     "@type": "EducationalAudience",
-    "educationalRole": "students"
+    "educationalRole": "Students"
   },
   "citation": {
     "@type": "CreativeWork",
@@ -301,26 +315,28 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
+  "identifier": "https://github.com/galaxyproject/training-material",
   "isPartOf": {
     "@type": "CreativeWork",
     "name": "Epigenetics",
     "description": "DNA methylation is an epigenetic mechanism used by higher eukaryotes and involved in e.g. gene expression, X-Chromosome inactivating, imprinting, and gene silencing of germline specific gene and repetitive elements.",
     "url": "https://training.galaxyproject.org//training-material/topics/epigenetics/"
   },
-  "courseCode": "epigenetics / methylation-seq / hands-on",
   "learningResourceType": "hands-on tutorial",
   "name": "Hands-on for 'DNA Methylation data analysis' tutorial",
   "url": "https://training.galaxyproject.org//training-material/topics/epigenetics/tutorials/methylation-seq/tutorial.html",
   "timeRequired": "PT3H",
+  "keywords": "epigenetics",
   "description": "The questions this  addresses are:\n - What is methylation and why it cannot be recognised by a normal NGS procedure?\n - Can a different methylation influence the expression of a gene? How?\n - Which tools you can use to analyse methylation data?\n\n\\nThe objectives are:\n - Learn how to analyse methylation data\n - Get a first intuition what are common pitfalls.\n\n",
   "inLanguage": {
     "@type": "Language",
     "name": "English",
     "alternateName": "en"
   },
-  "coursePrerequisites": [
+  "competencyRequired": [
     {
-      "@type": "CreativeWork",
+      "@context": "http://schema.org",
+      "@type": "LearningResource",
       "url": "https://training.galaxyproject.org//training-material/topics/introduction/",
       "name": "Introduction to Galaxy Analyses",
       "description": "Introduction to Galaxy Analyses",
@@ -332,7 +348,8 @@
       }
     },
     {
-      "@type": "Course",
+      "@context": "http://schema.org",
+      "@type": "LearningResource",
       "url": "https://training.galaxyproject.org//training-material/topics/sequence-analysis/tutorials/quality-control/slides.html",
       "name": "Quality Control",
       "description": "Slides for 'Quality Control' tutorial",
@@ -346,7 +363,8 @@
       }
     },
     {
-      "@type": "Course",
+      "@context": "http://schema.org",
+      "@type": "LearningResource",
       "url": "https://training.galaxyproject.org//training-material/topics/sequence-analysis/tutorials/quality-control/tutorial.html",
       "name": "Quality Control",
       "description": "Hands-on for 'Quality Control' tutorial",
@@ -360,21 +378,8 @@
       }
     },
     {
-      "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/sequence-analysis/tutorials/quality-control/slides.html",
-      "name": "Quality Control",
-      "description": "Slides for 'Quality Control' tutorial",
-      "learningResourceType": "slides",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
-    },
-    {
-      "@type": "Course",
+      "@context": "http://schema.org",
+      "@type": "LearningResource",
       "url": "https://training.galaxyproject.org//training-material/topics/sequence-analysis/tutorials/mapping/slides.html",
       "name": "Mapping",
       "description": "Slides for 'Mapping' tutorial",
@@ -388,7 +393,8 @@
       }
     },
     {
-      "@type": "Course",
+      "@context": "http://schema.org",
+      "@type": "LearningResource",
       "url": "https://training.galaxyproject.org//training-material/topics/sequence-analysis/tutorials/mapping/tutorial.html",
       "name": "Mapping",
       "description": "Hands-on for 'Mapping' tutorial",
@@ -400,43 +406,94 @@
         "name": "Galaxy Training Network",
         "url": "https://galaxyproject.org/teach/gtn/"
       }
-    },
-    {
-      "@type": "Course",
-      "url": "https://training.galaxyproject.org//training-material/topics/sequence-analysis/tutorials/mapping/slides.html",
-      "name": "Mapping",
-      "description": "Slides for 'Mapping' tutorial",
-      "learningResourceType": "slides",
-      "interactivityType": "expositive",
-      "provider": {
-        "@type": "Organization",
-        "email": "galaxytrainingnetwork@gmail.com",
-        "name": "Galaxy Training Network",
-        "url": "https://galaxyproject.org/teach/gtn/"
-      }
     }
-  ],
-  "hasPart": [
-
   ],
   "author": [
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Joachim Wolff"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/joachimwolff/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/joachimwolff/",
+      "name": "Joachim Wolff",
+      "image": "https://avatars.githubusercontent.com/joachimwolff",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Devon Ryan"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/dpryan79/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/dpryan79/",
+      "name": "Devon Ryan",
+      "image": "https://avatars.githubusercontent.com/dpryan79",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     }
   ],
   "contributor": [
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Joachim Wolff"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/joachimwolff/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/joachimwolff/",
+      "name": "Joachim Wolff",
+      "image": "https://avatars.githubusercontent.com/joachimwolff",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     },
     {
+      "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Devon Ryan"
+      "http://purl.org/dc/terms/conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Person/0.2-DRAFT-2019_07_19",
+        "@type": "Person"
+      },
+      "url": "https://training.galaxyproject.org/training-material/hall-of-fame/dpryan79/",
+      "mainEntityOfPage": "https://training.galaxyproject.org/training-material/hall-of-fame/dpryan79/",
+      "name": "Devon Ryan",
+      "image": "https://avatars.githubusercontent.com/dpryan79",
+      "description": "A contributor to the GTN project.",
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "email": "galaxytrainingnetwork@gmail.com",
+          "name": "Galaxy Training Network",
+          "url": "https://galaxyproject.org/teach/gtn/"
+        }
+      ]
     }
   ],
   "about": [
@@ -461,15 +518,19 @@
     <h1 data-toc-skip>DNA Methylation data analysis</h1>
     
 
+    <div markdown="0">
 
-    <div class="contributors-line">Authors: 
+	<div class="contributors-line">
+		Authors: 
 <a href="/training-material/hall-of-fame/joachimwolff/" class="contributor-badge contributor-joachimwolff"><img src="https://avatars.githubusercontent.com/joachimwolff?s=27" alt="Avatar">Joachim Wolff</a>
+
 
 
 <a href="/training-material/hall-of-fame/dpryan79/" class="contributor-badge contributor-dpryan79"><img src="https://avatars.githubusercontent.com/dpryan79?s=27" alt="Avatar">Devon Ryan</a>
 
 
-<a href="https://training.galaxyproject.org/training-material/topics/contributing/" class="contributor-badge contributor-newcontributors"><i class="fas fa-users" aria-hidden="true"></i><span class="visually-hidden">hall-of-fame</span>Add Contributions!</a>
+
+	</div>
 
 </div>
 
@@ -652,6 +713,8 @@
 
 
 
+
+
   
 
 
@@ -661,7 +724,7 @@
 
 
     <a href="#" class="btn btn-default dropdown-toggle topic-icon" data-toggle="dropdown" aria-expanded="false" title="Where to run the tutorial">
-        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span> Available on these Galaxies 
+        <i class="fas fa-globe" aria-hidden="true"></i><span class="visually-hidden">instances</span>&nbsp;Available on these Galaxies 
     </a>
     <ul class="dropdown-menu">
     
@@ -1176,6 +1239,9 @@ Compute now the alignment. Please notice that depending on your system this comp
                 
 
                 
+
+
+                
                 <h1 id="bibliography">References</h1>
                 <ol class="bibliography"><li id="Lin2015">Lin, I.-H., D.-T. Chen, Y.-F. Chang, Y.-L. Lee, C.-H. Su <i>et al.</i>, 2015 <b>Hierarchical Clustering of Breast Cancer Methylomes Revealed Differentially Methylated and Expressed Breast Cancer Genes</b> (O. El-Maarri, Ed.). PLOS ONE 10: e0118453. <a href="https://doi.org/10.1371/journal.pone.0118453">10.1371/journal.pone.0118453</a></li></ol>
                 
@@ -1214,8 +1280,6 @@ Compute now the alignment. Please notice that depending on your system this comp
                         });
                     })(window, document);
                 </script>
-
-
 
                 <h1>Citing this Tutorial</h1>
                 <p>
@@ -1259,6 +1323,8 @@ note = "[Online; accessed TODAY]"
                 </pre></div></div>
                 </p>
                 </blockquote>
+
+                
 
 
 <script type="text/javascript">
