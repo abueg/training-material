@@ -31,6 +31,9 @@
     <meta property="og:title" content="Galaxy Training: Galaxy Code Architecture" />
     <meta property="og:description" content="Galaxy is an open-source project. Everyone can contribute..." />
     <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
+
+    <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/dev/tutorials/architecture/slides.html" />
+
     <script type="application/ld+json">
       
 
@@ -42,23 +45,6 @@
     "@id": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
     "@type": "CreativeWork"
   },
-  "accessMode": [
-    "textual",
-    "visual"
-  ],
-  "accessModeSufficient": [
-    "textual",
-    "visual"
-  ],
-  "accessibilityControl": [
-    "fullKeyboardControl",
-    "fullMouseControl"
-  ],
-  "accessibilityFeature": [
-    "alternativeText",
-    "tableOfContents"
-  ],
-  "accessibilitySummary": "The text aims to be as accessible as possible. Image descriptions will vary per tutorial, from images being completely inaccessible, to images with good descriptions for non-visual users.",
   "audience": {
     "@type": "EducationalAudience",
     "educationalRole": "Students"
@@ -74,7 +60,7 @@
     "name": "Galaxy Training Network",
     "url": "https://galaxyproject.org/teach/gtn/"
   },
-  "dateModified": "1970-01-01 00:00:24 +0000",
+  "dateModified": "1970-01-01 00:00:30 +0000",
   "discussionUrl": "https://gitter.im/Galaxy-Training-Network/Lobby",
   "headline": "Galaxy Code Architecture",
   "interactivityType": "mixed",
@@ -100,15 +86,32 @@
     "url": "https://galaxyproject.org/teach/gtn/"
   },
   "identifier": "https://github.com/galaxyproject/training-material",
+  "accessMode": [
+    "textual",
+    "visual"
+  ],
+  "accessModeSufficient": [
+    "textual",
+    "visual"
+  ],
+  "accessibilityControl": [
+    "fullKeyboardControl",
+    "fullMouseControl"
+  ],
+  "accessibilityFeature": [
+    "alternativeText",
+    "tableOfContents"
+  ],
+  "accessibilitySummary": "The text aims to be as accessible as possible. Image descriptions will vary per tutorial, from images being completely inaccessible, to images with good descriptions for non-visual users.",
   "isPartOf": {
     "@type": "CreativeWork",
     "name": "Development in Galaxy",
     "description": "Galaxy is an open-source project. Everyone can contribute to its development with core Galaxy development, integration of softwares in Galaxy environment, ...",
-    "url": "https://training.galaxyproject.org//training-material/topics/dev/"
+    "url": "https://training.galaxyproject.org/training-material/topics/dev/"
   },
   "learningResourceType": "slides",
   "name": "Slides for 'Galaxy Code Architecture' tutorial",
-  "url": "https://training.galaxyproject.org//training-material/topics/dev/tutorials/architecture/slides.html",
+  "url": "https://training.galaxyproject.org/training-material/topics/dev/tutorials/architecture/slides.html",
   "timeRequired": "PT150M",
   "keywords": "dev",
   "description": "The questions this  addresses are:\n - How is the Galaxy code structured?\n - What do the various other projects related to Galaxy do?\n - What happens when I start Galaxy?\n\n\\nThe objectives are:\n - Explore various aspects of the Galaxy codebase.\n - Understand the various top-level files and modules in Galaxy.\n - Understand how dependencies work in Galaxy's frontend and backend.\n\n",
@@ -214,7 +217,7 @@
       "@type": "CreativeWork",
       "name": "Development in Galaxy",
       "description": "Galaxy is an open-source project. Everyone can contribute to its development with core Galaxy development, integration of softwares in Galaxy environment, ...",
-      "url": "https://training.galaxyproject.org//training-material/topics/dev/"
+      "url": "https://training.galaxyproject.org/training-material/topics/dev/"
     }
   ]
 }
@@ -257,7 +260,7 @@ class: center, middle, inverse
 
 
 
-<a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge contributor-bgruening"><img src="https://avatars.githubusercontent.com/bgruening?s=27" alt="Avatar">Björn Grüning</a>
+<a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge contributor-bgruening"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/bgruening?s=27" alt="Avatar">Björn Grüning</a>
 
 
 
@@ -266,7 +269,7 @@ class: center, middle, inverse
 </div>
 
 
-<div class="footnote" style="bottom: 4 em;"><i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Updated: Sep 24, 2021</div>
+<div class="footnote" style="bottom: 4 em;"><i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Updated: Jun 30, 2022</div>
 
 <div class="footnote" style="bottom: 2.5em;"><i class="fas fa-file-alt" aria-hidden="true"></i><span class="visually-hidden">text-document</span><a href="slides-plain.html"> Plain-text slides</a></div>
 <div class="footnote" style="bottom: 1em;"><strong>Tip: </strong>press <kbd>P</kbd> to view the presenter notes</div>
@@ -2166,9 +2169,11 @@ in a manager instead of in the model.
 
 - Database interactions powered by SQLAlchemy - https://www.sqlalchemy.org/.
 - Galaxy doesn't think in terms of &quot;rows&quot; but &quot;objects&quot;.
-- Classes for Galaxy model objects in `lib/galaxy/model/__init__.py`.
-- Classes mapped to tables in `lib/galaxy/model/mapping.py`
-  - Describes table definitions and relationships.
+- Classes for Galaxy model objects defined in `lib/galaxy/model/__init__.py`.
+- Classes mapped to database objects in same module via &quot;declarative mapping&quot;.
+  - Classes/attributes mapped to tables/columns
+  - Associations between classes mapped to relationships between tables
+
 
 ---
 
@@ -2176,16 +2181,19 @@ in a manager instead of in the model.
 
 ---
 
-### Galaxy Model Migrations
+### Galaxy Database Schema Migrations
 
-- A migration describes a linear list of database &quot;diff&quot;s to
-  end up with the current Galaxy model.
-- Allow the schema to be migrated forward automatically.
-- Powered by sqlalchemy-migrate - https://sqlalchemy-migrate.readthedocs.io/en/latest/.
-- Each file in `lib/galaxy/model/migrate/versions/`
-  - `0124_job_state_history.py`
-  - `0125_workflow_step_tracking.py`
-  - `0126_password_reset.py`
+- Automated execution of incremental, reversible changes to the database schema.
+- Performed to update or revert the database schema to a newer or older version.
+- Powered by Alembic - https://alembic.sqlalchemy.org/.
+  - (as of 22.05; prior to that by SQLAlchemy Migrate)
+- Galaxy's data model is split into the galaxy model and the install model:
+  - Persisted in one combined database or two separate databases
+  - Represented by 2 migration branches: &quot;gxy&quot; and &quot;tsi&quot;
+- Schema changes defined in revision modules:
+  - `lib/galaxy/model/migrations/alembic/versions_gxy` (gxy branch: galaxy model)
+  - `lib/galaxy/model/migrations/alembic/versions_tsi` (tsi branch: install model)
+
 
 ---
 
@@ -3447,7 +3455,7 @@ This material is the result of a collaborative work. Thanks to the [Galaxy Train
 
 
 
-<a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge contributor-bgruening"><img src="https://avatars.githubusercontent.com/bgruening?s=27" alt="Avatar">Björn Grüning</a>
+<a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge contributor-bgruening"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/bgruening?s=27" alt="Avatar">Björn Grüning</a>
 
 
 

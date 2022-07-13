@@ -17,12 +17,14 @@
         <link rel="stylesheet" href="/training-material/assets/css/syntax_highlighting.css">
         <link rel="shortcut icon" href="/training-material/favicon.ico" type="image/x-icon" />
         <link rel="alternate" type="application/atom+xml" href="/training-material/feed.xml" />
+        <link rel="canonical" href="https://training.galaxyproject.org/training-material/topics/dev/tutorials/architecture/slides-plain.html" />
+        <link rel="license" href="https://creativecommons.org/licenses/by/4.0/" />
 
         <meta name="DC.identifier" content="https://github.com/galaxyproject/training-material" />
 <meta name="DC.type" content="text" />
 <meta name="DC.title" content="Galaxy Code Architecture" />
 <meta name="DC.publisher" content="Galaxy Training Network" />
-<meta name="DC.date" content="1970-01-01 00:00:24 +0000" />
+<meta name="DC.date" content="1970-01-01 00:33:42 +0000" />
 <meta name="DC.creator" content="John Chilton" />
 <meta name="DC.creator" content="Björn Grüning" />
 
@@ -31,10 +33,10 @@
         
         
         
-        <meta name="description" content="Collection of tutorials developed and maintained by the w..." />
+        <meta name="description" content="Galaxy is an open-source project. Everyone can contribute..." />
         <meta property="og:site_name" content="Galaxy Training Network" />
         <meta property="og:title" content="Galaxy Training: Galaxy Code Architecture" />
-        <meta property="og:description" content="Collection of tutorials developed and maintained by the w..." />
+        <meta property="og:description" content="Galaxy is an open-source project. Everyone can contribute..." />
         <meta property="og:image" content="/training-material/assets/images/GTNLogo1000.png" />
 
     </head>
@@ -110,6 +112,10 @@
 
         <a class="dropdown-item" href="/training-material/faq" title="Check our FAQs">
            <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> FAQs
+        </a>
+        
+        <a class="dropdown-item" href="/training-material/topics/dev/faqs/" title="Check our FAQs for the Development in Galaxy topic">
+           <i class="far fa-question-circle" aria-hidden="true"></i><span class="visually-hidden">question</span> Topic FAQs
         </a>
         
         <a class="dropdown-item" href="https://help.galaxyproject.org/" title="Discuss on Galaxy Help">
@@ -232,7 +238,7 @@
 
 
 
-<a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge contributor-bgruening"><img src="https://avatars.githubusercontent.com/bgruening?s=27" alt="Avatar">Björn Grüning</a>
+<a href="/training-material/hall-of-fame/bgruening/" class="contributor-badge contributor-bgruening"><img src="/training-material/assets/images/orcid.png" alt="orcid logo"/><img src="https://avatars.githubusercontent.com/bgruening?s=27" alt="Avatar">Björn Grüning</a>
 
 
 
@@ -275,7 +281,7 @@
 
 		
 
-		<div><strong> <i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> Sep 24, 2021 </div>
+		<div><strong> <i class="far fa-calendar" aria-hidden="true"></i><span class="visually-hidden">last_modification</span> Last modification:</strong> Jun 30, 2022 </div>
 
 	<hr />
 
@@ -2158,10 +2164,11 @@ in a manager instead of in the model.</p>
 <ul>
   <li>Database interactions powered by SQLAlchemy - https://www.sqlalchemy.org/.</li>
   <li>Galaxy doesn’t think in terms of “rows” but “objects”.</li>
-  <li>Classes for Galaxy model objects in <code class="language-plaintext highlighter-rouge">lib/galaxy/model/__init__.py</code>.</li>
-  <li>Classes mapped to tables in <code class="language-plaintext highlighter-rouge">lib/galaxy/model/mapping.py</code>
+  <li>Classes for Galaxy model objects defined in <code class="language-plaintext highlighter-rouge">lib/galaxy/model/__init__.py</code>.</li>
+  <li>Classes mapped to database objects in same module via “declarative mapping”.
     <ul>
-      <li>Describes table definitions and relationships.</li>
+      <li>Classes/attributes mapped to tables/columns</li>
+      <li>Associations between classes mapped to relationships between tables</li>
     </ul>
   </li>
 </ul>
@@ -2172,18 +2179,26 @@ in a manager instead of in the model.</p>
 
 <hr />
 
-<h3 id="galaxy-model-migrations">Galaxy Model Migrations</h3>
+<h3 id="galaxy-database-schema-migrations">Galaxy Database Schema Migrations</h3>
 
 <ul>
-  <li>A migration describes a linear list of database “diff”s to
-end up with the current Galaxy model.</li>
-  <li>Allow the schema to be migrated forward automatically.</li>
-  <li>Powered by sqlalchemy-migrate - https://sqlalchemy-migrate.readthedocs.io/en/latest/.</li>
-  <li>Each file in <code class="language-plaintext highlighter-rouge">lib/galaxy/model/migrate/versions/</code>
+  <li>Automated execution of incremental, reversible changes to the database schema.</li>
+  <li>Performed to update or revert the database schema to a newer or older version.</li>
+  <li>Powered by Alembic - https://alembic.sqlalchemy.org/.
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">0124_job_state_history.py</code></li>
-      <li><code class="language-plaintext highlighter-rouge">0125_workflow_step_tracking.py</code></li>
-      <li><code class="language-plaintext highlighter-rouge">0126_password_reset.py</code></li>
+      <li>(as of 22.05; prior to that by SQLAlchemy Migrate)</li>
+    </ul>
+  </li>
+  <li>Galaxy’s data model is split into the galaxy model and the install model:
+    <ul>
+      <li>Persisted in one combined database or two separate databases</li>
+      <li>Represented by 2 migration branches: “gxy” and “tsi”</li>
+    </ul>
+  </li>
+  <li>Schema changes defined in revision modules:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">lib/galaxy/model/migrations/alembic/versions_gxy</code> (gxy branch: galaxy model)</li>
+      <li><code class="language-plaintext highlighter-rouge">lib/galaxy/model/migrations/alembic/versions_tsi</code> (tsi branch: install model)</li>
     </ul>
   </li>
 </ul>
@@ -3485,7 +3500,7 @@ This material is licensed under the <a rel="license" href="https://creativecommo
         The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
         </p>
 
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/c9db7aea9033a758ee7100cea64e2b5a545bb17a">c9db7aea9033a758ee7100cea64e2b5a545bb17a</a></p>
+        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/205b8e4ee9e537ecef7e19a8b42caff002e3ddcc">205b8e4ee9e537ecef7e19a8b42caff002e3ddcc</a></p>
     </div>
 </footer>
 
