@@ -121,6 +121,8 @@
                                
                        
                                
+                       
+                               
 			{
 				"id": "admin/tutorials/ansible-galaxy/slides",
 				"topic": "Galaxy Server administration",
@@ -526,6 +528,8 @@
 				"title": "ToolFactory: Generating Tools From Simple Scripts"
 			},
 								
+                               
+                       
                                
                        
                

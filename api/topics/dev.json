@@ -117,6 +117,9 @@
           "name": "John Chilton",
           "email": "jmchilton@gmail.com",
           "joined": "2017-09",
+          "twitter": "jmchilton",
+          "gitter": "jmchilton",
+          "orcid": "0000-0002-6794-0756",
           "id": "jmchilton",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/jmchilton.json"
         },
@@ -464,6 +467,9 @@
           "name": "John Chilton",
           "email": "jmchilton@gmail.com",
           "joined": "2017-09",
+          "twitter": "jmchilton",
+          "gitter": "jmchilton",
+          "orcid": "0000-0002-6794-0756",
           "id": "jmchilton",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/jmchilton.json"
         }
@@ -490,7 +496,7 @@
         }
       ],
       "subtopic": "core",
-      "last_modified_at": "29-May-22",
+      "last_modified_at": "16-Jul-22",
       "url": "/topics/dev/tutorials/debugging/tutorial.html",
       "topic_name": "dev",
       "tutorial_name": "debugging",
@@ -544,6 +550,9 @@
           "name": "John Chilton",
           "email": "jmchilton@gmail.com",
           "joined": "2017-09",
+          "twitter": "jmchilton",
+          "gitter": "jmchilton",
+          "orcid": "0000-0002-6794-0756",
           "id": "jmchilton",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/jmchilton.json"
         },
@@ -560,7 +569,7 @@
           "url": "https://training.galaxyproject.org/training-material/api/contributors/bgruening.json"
         }
       ],
-      "last_modified_at": "30-Jun-22",
+      "last_modified_at": "19-Jul-22",
       "url": "/topics/dev/tutorials/architecture/slides.html",
       "topic_name": "dev",
       "tutorial_name": "architecture",
@@ -1213,10 +1222,7 @@
       "notebook": {
         "language": "python"
       },
-      "last_modified_at": "23-Jun-22",
-      "tags": [
-        "jupyter-notebook"
-      ],
+      "last_modified_at": "14-Jul-22",
       "url": "/topics/dev/tutorials/bioblend-api/tutorial.html",
       "topic_name": "dev",
       "tutorial_name": "bioblend-api",
@@ -1330,6 +1336,9 @@
           "name": "John Chilton",
           "email": "jmchilton@gmail.com",
           "joined": "2017-09",
+          "twitter": "jmchilton",
+          "gitter": "jmchilton",
+          "orcid": "0000-0002-6794-0756",
           "id": "jmchilton",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/jmchilton.json"
         },
@@ -1415,6 +1424,9 @@
           "name": "John Chilton",
           "email": "jmchilton@gmail.com",
           "joined": "2017-09",
+          "twitter": "jmchilton",
+          "gitter": "jmchilton",
+          "orcid": "0000-0002-6794-0756",
           "id": "jmchilton",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/jmchilton.json"
         },
@@ -1536,6 +1548,9 @@
           "name": "John Chilton",
           "email": "jmchilton@gmail.com",
           "joined": "2017-09",
+          "twitter": "jmchilton",
+          "gitter": "jmchilton",
+          "orcid": "0000-0002-6794-0756",
           "id": "jmchilton",
           "url": "https://training.galaxyproject.org/training-material/api/contributors/jmchilton.json"
         },
@@ -1855,6 +1870,92 @@
       "urls": {
         "hands_on": "https://training.galaxyproject.org/training-material/api/topics//dev/tutorials/tool-generators/tutorial.json",
         "slides": "https://training.galaxyproject.org/training-material/api/topics//dev/tutorials/tool-generators/tutorial.json"
+      }
+    },
+    {
+      "layout": "tutorial_hands_on",
+      "title": "Writing Automated Tests for Galaxy",
+      "objectives": [
+        "Learn about the different types of automated tests in Galaxy",
+        "Learn to write API tests",
+        "Learn to write unit tests"
+      ],
+      "time_estimation": "3h",
+      "key_points": [
+        "Read the Writing Tests for Galaxy documentation article",
+        "Check for existing examples of similar tests before implementing your own",
+        "Prefer Galaxy's abstractions to writing low level code whenever possible",
+        "Write tests that do not depend on each other or the state of the database",
+        "When testing the API, verify the return status code before checking the response data",
+        "Refactor the code under test if that's needed to make it testable",
+        "Move redundant setup code into fixtures",
+        "Use test doubles (mocks, stubs, etc.) sparingly"
+      ],
+      "contributors": [
+        {
+          "name": "John Davis",
+          "email": "jdavcs@gmail.com",
+          "joined": "2019-06",
+          "id": "jdavcs",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/jdavcs.json"
+        },
+        {
+          "name": "John Chilton",
+          "email": "jmchilton@gmail.com",
+          "joined": "2017-09",
+          "twitter": "jmchilton",
+          "gitter": "jmchilton",
+          "orcid": "0000-0002-6794-0756",
+          "id": "jmchilton",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/jmchilton.json"
+        }
+      ],
+      "requirements": [
+        {
+          "type": "none",
+          "title": "Familiarity with basic Git commands"
+        },
+        {
+          "type": "none",
+          "title": "Basic knowledge of Python and JavaScript"
+        },
+        {
+          "type": "none",
+          "title": "Mac OS or Linux that can run Galaxy & your favorite IDE or editor"
+        },
+        {
+          "type": "internal",
+          "topic_name": "dev",
+          "tutorials": [
+            "architecture"
+          ]
+        }
+      ],
+      "subtopic": "core",
+      "last_modified_at": "15-Jul-22",
+      "url": "/topics/dev/tutorials/writing_tests/tutorial.html",
+      "topic_name": "dev",
+      "tutorial_name": "writing_tests",
+      "hands_on": true,
+      "slides": false,
+      "tools": [
+
+      ],
+      "tours": false,
+      "video": false,
+      "translations": {
+        "tutorial": [
+
+        ],
+        "slides": [
+
+        ],
+        "video": false
+      },
+      "type": "tutorial",
+      "urls": {
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//dev/tutorials/writing_tests/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics//dev/tutorials/writing_tests/tutorial.json"
       }
     }
   ]
