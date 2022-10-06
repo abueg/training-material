@@ -114,7 +114,7 @@
           "url": "https://training.galaxyproject.org/training-material/api/contributors/huitang-earth.json"
         }
       ],
-      "last_modified_at": "17-Nov-21",
+      "last_modified_at": "14-Jul-22",
       "url": "/topics/climate/tutorials/fates/tutorial.html",
       "topic_name": "climate",
       "tutorial_name": "fates",
@@ -219,7 +219,7 @@
           "url": "https://training.galaxyproject.org/training-material/api/contributors/annefou.json"
         }
       ],
-      "last_modified_at": "17-Nov-21",
+      "last_modified_at": "14-Jul-22",
       "url": "/topics/climate/tutorials/fates-jupyterlab/tutorial.html",
       "topic_name": "climate",
       "tutorial_name": "fates-jupyterlab",
@@ -547,7 +547,7 @@
           "url": "https://training.galaxyproject.org/training-material/api/contributors/annefou.json"
         }
       ],
-      "last_modified_at": "02-Sep-21",
+      "last_modified_at": "14-Jul-22",
       "url": "/topics/climate/tutorials/panoply/tutorial.html",
       "topic_name": "climate",
       "tutorial_name": "panoply",

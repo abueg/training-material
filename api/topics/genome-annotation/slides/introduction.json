@@ -28,7 +28,8 @@
       "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json"
     }
   ],
-  "last_modified_at": "08-Dec-21",
+  "subtopic": "intro",
+  "last_modified_at": "22-Aug-22",
   "url": "/topics/genome-annotation/slides/introduction.html",
   "topic_name": "genome-annotation",
   "tutorial_name": "introduction",

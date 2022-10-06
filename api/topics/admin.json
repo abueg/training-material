@@ -354,7 +354,10 @@
           ]
         }
       ],
-      "last_modified_at": "01-Mar-22",
+      "abbreviations": {
+        "CI": "Continuous Integration"
+      },
+      "last_modified_at": "23-Sep-22",
       "url": "/topics/admin/tutorials/jenkins/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "jenkins",
@@ -463,7 +466,7 @@
           ]
         }
       ],
-      "last_modified_at": "06-Jul-22",
+      "last_modified_at": "21-Jul-22",
       "url": "/topics/admin/tutorials/connect-to-compute-cluster/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "connect-to-compute-cluster",
@@ -603,7 +606,7 @@
           ]
         }
       ],
-      "last_modified_at": "14-Jun-22",
+      "last_modified_at": "21-Jul-22",
       "url": "/topics/admin/tutorials/data-library/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "data-library",
@@ -692,6 +695,177 @@
       "urls": {
         "hands_on": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/terraform/tutorial.json",
         "slides": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/terraform/tutorial.json"
+      }
+    },
+    {
+      "layout": "tutorial_hands_on",
+      "title": "Deploying Tailscale/Headscale for private mesh networking",
+      "zenodo_link": "",
+      "questions": [
+        "What is Tailscale?",
+        "When is it useful?",
+        "Is it right for me?"
+      ],
+      "objectives": [
+        "Setup a tailnet across a few nodes"
+      ],
+      "time_estimation": "60m",
+      "key_points": [
+        "Tailscale is a fantastic bit of software that Just Works™",
+        "We use headscale, an open source reimplementation of Tailscale's control server because it's easy to use in training",
+        "But if you can afford Tailscale, just use that.",
+        "There is a FOSS plan, go check it out!"
+      ],
+      "contributions": {
+        "authorship": [
+          "hexylena"
+        ],
+        "editing": [
+          "natefoo"
+        ]
+      },
+      "requirements": [
+        {
+          "type": "internal",
+          "topic_name": "admin",
+          "tutorials": [
+            "ansible"
+          ]
+        },
+        {
+          "type": "none",
+          "title": "Three or more VMs (they can be tiny, 1 CPU, <1GB RAM)"
+        }
+      ],
+      "subtopic": "cloud",
+      "tags": [
+        "wireguard",
+        "networking"
+      ],
+      "last_modified_at": "21-Sep-22",
+      "url": "/topics/admin/tutorials/wireguard-headscale/tutorial.html",
+      "topic_name": "admin",
+      "tutorial_name": "wireguard-headscale",
+      "hands_on": true,
+      "slides": false,
+      "tools": [
+
+      ],
+      "tours": false,
+      "video": false,
+      "translations": {
+        "tutorial": [
+
+        ],
+        "slides": [
+
+        ],
+        "video": false
+      },
+      "type": "tutorial",
+      "contributors": [
+        {
+          "name": "Helena Rasche",
+          "email": "helena.rasche@gmail.com",
+          "orcid": "0000-0001-9760-8992",
+          "maintainer_contact": "gitter",
+          "gitter": "hexylena",
+          "joined": "2017-09",
+          "elixir_node": "nl",
+          "id": "hexylena",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json"
+        },
+        {
+          "name": "Nate Coraor",
+          "gitter": "natefoo",
+          "twitter": "natefoo",
+          "email": "nate@bx.psu.edu",
+          "joined": "2017-12",
+          "id": "natefoo",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/natefoo.json"
+        }
+      ],
+      "urls": {
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/wireguard-headscale/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/wireguard-headscale/tutorial.json"
+      }
+    },
+    {
+      "layout": "tutorial_hands_on",
+      "title": "Deploying Wireguard for private mesh networking",
+      "zenodo_link": "",
+      "questions": [
+        "What is wireguard?",
+        "When is it useful?",
+        "Is it right for me?"
+      ],
+      "objectives": [
+        "Setup a wireguard mesh across a few nodes"
+      ],
+      "time_estimation": "60m",
+      "key_points": [
+        "Wireguard is incredibly easy to deploy, and very secure."
+      ],
+      "contributions": {
+        "authorship": [
+          "hexylena"
+        ]
+      },
+      "requirements": [
+        {
+          "type": "internal",
+          "topic_name": "admin",
+          "tutorials": [
+            "ansible"
+          ]
+        },
+        {
+          "type": "none",
+          "title": "Three or more VMs (they can be tiny, 1 CPU, <1GB RAM)"
+        }
+      ],
+      "subtopic": "cloud",
+      "tags": [
+        "wireguard",
+        "networking"
+      ],
+      "last_modified_at": "20-Sep-22",
+      "url": "/topics/admin/tutorials/wireguard/tutorial.html",
+      "topic_name": "admin",
+      "tutorial_name": "wireguard",
+      "hands_on": true,
+      "slides": false,
+      "tools": [
+
+      ],
+      "tours": false,
+      "video": false,
+      "translations": {
+        "tutorial": [
+
+        ],
+        "slides": [
+
+        ],
+        "video": false
+      },
+      "type": "tutorial",
+      "contributors": [
+        {
+          "name": "Helena Rasche",
+          "email": "helena.rasche@gmail.com",
+          "orcid": "0000-0001-9760-8992",
+          "maintainer_contact": "gitter",
+          "gitter": "hexylena",
+          "joined": "2017-09",
+          "elixir_node": "nl",
+          "id": "hexylena",
+          "url": "https://training.galaxyproject.org/training-material/api/contributors/hexylena.json"
+        }
+      ],
+      "urls": {
+        "hands_on": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/wireguard/tutorial.json",
+        "slides": "https://training.galaxyproject.org/training-material/api/topics//admin/tutorials/wireguard/tutorial.json"
       }
     },
     {
@@ -957,7 +1131,7 @@
         "data",
         "git-gat"
       ],
-      "last_modified_at": "06-Jul-22",
+      "last_modified_at": "21-Jul-22",
       "url": "/topics/admin/tutorials/ftp/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "ftp",
@@ -1417,7 +1591,10 @@
           "title": "A VM with at least 2 vCPUs and 4 GB RAM, preferably running Ubuntu 18.04 - 20.04."
         }
       ],
-      "last_modified_at": "14-Jul-22",
+      "abbreviations": {
+        "DVCS": "Distributed Version Control System"
+      },
+      "last_modified_at": "23-Sep-22",
       "url": "/topics/admin/tutorials/ansible-galaxy/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "ansible-galaxy",
@@ -1781,7 +1958,7 @@
         "ansible",
         "git-gat"
       ],
-      "last_modified_at": "30-Mar-22",
+      "last_modified_at": "21-Jul-22",
       "url": "/topics/admin/tutorials/gxadmin/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "gxadmin",
@@ -1880,7 +2057,7 @@
           ]
         }
       ],
-      "last_modified_at": "28-Jun-22",
+      "last_modified_at": "21-Jul-22",
       "url": "/topics/admin/tutorials/reports/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "reports",
@@ -1959,7 +2136,10 @@
           ]
         }
       ],
-      "last_modified_at": "06-Jul-22",
+      "abbreviations": {
+        "TSDB": "Time Series Database"
+      },
+      "last_modified_at": "23-Sep-22",
       "url": "/topics/admin/tutorials/monitoring/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "monitoring",
@@ -2079,7 +2259,7 @@
         "tools",
         "git-gat"
       ],
-      "last_modified_at": "14-Mar-22",
+      "last_modified_at": "21-Jul-22",
       "url": "/topics/admin/tutorials/tool-management/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "tool-management",
@@ -2128,7 +2308,7 @@
         }
       ],
       "subtopic": "maintenance",
-      "last_modified_at": "14-Jun-22",
+      "last_modified_at": "20-Jul-22",
       "url": "/topics/admin/tutorials/troubleshooting/slides.html",
       "topic_name": "admin",
       "tutorial_name": "troubleshooting",
@@ -2485,7 +2665,7 @@
           ]
         }
       ],
-      "last_modified_at": "28-Jun-22",
+      "last_modified_at": "21-Jul-22",
       "url": "/topics/admin/tutorials/job-destinations/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "job-destinations",
@@ -2563,7 +2743,7 @@
           ]
         }
       ],
-      "last_modified_at": "06-Jul-22",
+      "last_modified_at": "21-Jul-22",
       "url": "/topics/admin/tutorials/tus/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "tus",
@@ -2643,7 +2823,7 @@
         "ansible",
         "git-gat"
       ],
-      "last_modified_at": "14-Jun-22",
+      "last_modified_at": "21-Jul-22",
       "url": "/topics/admin/tutorials/cvmfs/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "cvmfs",
@@ -2865,7 +3045,7 @@
           "type": "none"
         }
       ],
-      "last_modified_at": "06-Jul-22",
+      "last_modified_at": "21-Jul-22",
       "url": "/topics/admin/tutorials/pulsar/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "pulsar",
@@ -3131,7 +3311,7 @@
           ]
         }
       ],
-      "last_modified_at": "06-Jul-22",
+      "last_modified_at": "21-Jul-22",
       "url": "/topics/admin/tutorials/tiaas/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "tiaas",
@@ -3286,7 +3466,7 @@
           ]
         }
       ],
-      "last_modified_at": "06-Jul-22",
+      "last_modified_at": "21-Jul-22",
       "url": "/topics/admin/tutorials/singularity/tutorial.html",
       "topic_name": "admin",
       "tutorial_name": "singularity",

@@ -341,12 +341,12 @@
 							Transcriptomics
 						</a>
 						/
-						<a href="/training-material//topics/transcriptomics/tutorials/scrna-seq-basic-pipeline/tutorial.html">
-						Filter, Plot and Explore Single-cell RNA-seq Data
+						<a href="/training-material//topics/transcriptomics/tutorials/scrna-case_monocle3-trajectories/tutorial.html">
+						Trajectory Analysis using Monocle3 
 						</a>
 						
 						
-	
+	<abbr title="This person edited the text, either for spelling and grammar, flow, GTN-fit, or other similar editing categories">📝</abbr>
 
 
 					</li>
@@ -358,12 +358,12 @@
 							Transcriptomics
 						</a>
 						/
-						<a href="/training-material//topics/transcriptomics/tutorials/scrna-JUPYTER-trajectories/tutorial.html">
-						Trajectory Analysis using Python (Jupyter Notebook) in Galaxy
+						<a href="/training-material//topics/transcriptomics/tutorials/scrna-case_monocle3-trajectories/tutorial.html">
+						Trajectory Analysis using Monocle3 
 						</a>
 						
 						
-	
+	<abbr title="This person tested the tutorial to ensure it works correctly for students, or reported issues with the tutorial.">⚙️</abbr>
 
 
 					</li>
@@ -392,6 +392,23 @@
 							Transcriptomics
 						</a>
 						/
+						<a href="/training-material//topics/transcriptomics/tutorials/scrna-case_basic-pipeline/tutorial.html">
+						Filter, Plot and Explore Single-cell RNA-seq Data
+						</a>
+						
+						
+	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/transcriptomics">
+							Transcriptomics
+						</a>
+						/
 						<a href="/training-material//topics/transcriptomics/tutorials/bulk-music/tutorial.html">
 						Bulk RNA Deconvolution with MuSiC
 						</a>
@@ -409,12 +426,12 @@
 							Transcriptomics
 						</a>
 						/
-						<a href="/training-material//topics/transcriptomics/tutorials/droplet-quantification-preprocessing/tutorial.html">
+						<a href="/training-material//topics/transcriptomics/tutorials/scrna-case_alevin/tutorial.html">
 						Generating a single cell matrix using Alevin
 						</a>
 						
 						
-	
+	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
 
 
 					</li>
@@ -426,7 +443,41 @@
 							Transcriptomics
 						</a>
 						/
-						<a href="/training-material//topics/transcriptomics/tutorials/scrna-seq-basic-pipeline/tutorial_ES.html">
+						<a href="/training-material//topics/transcriptomics/tutorials/scrna-case_JUPYTER-trajectories/tutorial.html">
+						Inferring Trajectories using Python (Jupyter Notebook) in Galaxy
+						</a>
+						
+						
+	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/transcriptomics">
+							Transcriptomics
+						</a>
+						/
+						<a href="/training-material//topics/transcriptomics/tutorials/scrna-case_alevin-combine-datasets/tutorial.html">
+						Combining datasets after pre-processing
+						</a>
+						
+						
+	<abbr title="This person wrote the bulk of the training material, they may have done the analysis, built the workflow, and wrote the text themselves.">✍️</abbr>
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/transcriptomics">
+							Transcriptomics
+						</a>
+						/
+						<a href="/training-material//topics/transcriptomics/tutorials/scrna-case_basic-pipeline/tutorial_ES.html">
 						Filtrado, representación y exploración de secuenciación de ARN de células únicas
 						</a>
 						
@@ -443,7 +494,24 @@
 							Transcriptomics
 						</a>
 						/
-						<a href="/training-material//topics/transcriptomics/tutorials/droplet-quantification-preprocessing/tutorial_ES.html">
+						<a href="/training-material//topics/transcriptomics/tutorials/scrna-case_alevin/tutorial_ES.html">
+						Generación de una matriz de datos de secuenciación de ARN de células únicas utilizando Alevin
+						</a>
+						
+						
+	
+
+
+					</li>
+				
+					<li>
+						
+						
+						<a href="/training-material/topics/transcriptomics">
+							Transcriptomics
+						</a>
+						/
+						<a href="/training-material//topics/transcriptomics/tutorials/scrna-case_alevin-combine-datasets/tutorial_ES.html">
 						Generación de una matriz de datos de secuenciación de ARN de células únicas utilizando Alevin
 						</a>
 						
@@ -583,14 +651,34 @@ Wendi Bacon
                 
                 </div>
 				
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
 
-				<script type="text/javascript">
+<script type="text/javascript">
+const isReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+if(isReduced){
+    Chart.defaults.global.animation.duration = 0;
+}
 
 var ctx = document.getElementById('myChart').getContext('2d');
 var ctx2 = document.getElementById('slidesVsTutorials').getContext('2d');
 
 var topics = [
+
+	
+	
+	"Transcriptomics",
+
+	
+	
+	"Transcriptomics",
+
+	
+	
+	"Transcriptomics",
+
+	
+	
+	"Transcriptomics",
 
 	
 	
@@ -636,6 +724,14 @@ var topics = [
 ];
 
 var slidesVsTutos = [
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
+
+	"Tutorials",
 
 	"Tutorials",
 
@@ -752,7 +848,7 @@ var chart2 = new Chart(ctx2, {
         The content of the tutorials is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. The website and infrastructure is licensed under <a rel="license" href="https://github.com/galaxyproject/training-material/blob/main/LICENSE.md">MIT</a>.
         </p>
 
-        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/339d13cbe3a92d2f8094fc0b1abe91b6c9b9bbb1">339d13cbe3a92d2f8094fc0b1abe91b6c9b9bbb1</a></p>
+        <p>This is revision <a href="https://github.com/galaxyproject/training-material/commit/58a07dd116267487db828910297a04b5192593bd">58a07dd116267487db828910297a04b5192593bd</a></p>
     </div>
 </footer>
 
