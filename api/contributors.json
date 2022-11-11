@@ -207,10 +207,11 @@
   {
     "name": "Beatriz Serrano-Solano",
     "email": "beatrizserrano.galaxy@gmail.com",
-    "twitter": "Birthae",
+    "twitter": "BSerranoSolano",
+    "linkedin": "beatriz-serrano",
     "gitter": "beatrizserrano",
+    "orcid": "0000-0002-5862-6132",
     "joined": "2020-07",
-    "elixir_node": "de",
     "id": "beatrizserrano",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/beatrizserrano.json"
   },
@@ -319,6 +320,13 @@
     "joined": "2022-03",
     "id": "breakthewall",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/breakthewall.json"
+  },
+  {
+    "name": "Brigida Gallone",
+    "orcid": "0000-0003-3045-5949",
+    "joined": "2022-05",
+    "id": "brigidagallone",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/brigidagallone.json"
   },
   {
     "name": "Catherine Bromhead",
@@ -472,6 +480,12 @@
     "joined": "2017-09",
     "id": "delphine-l",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/delphine-l.json"
+  },
+  {
+    "name": "Desmond Jasper",
+    "joined": "2020-04",
+    "id": "desmond-jasper",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/desmond-jasper.json"
   },
   {
     "name": "Donny Vrins",
@@ -1117,10 +1131,17 @@
     "url": "https://training.galaxyproject.org/training-material/api/contributors/mariecrane.json"
   },
   {
-    "name": "Marie",
+    "name": "Marie Josse",
     "joined": "2022-03",
     "id": "Marie59",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/Marie59.json"
+  },
+  {
+    "name": "Marisa Loach",
+    "email": "marisa.loach@open.ac.uk",
+    "joined": "2022-10",
+    "id": "MarisaJL",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/MarisaJL.json"
   },
   {
     "name": "Martin Čech",
@@ -1338,7 +1359,7 @@
   },
   {
     "name": "Wendi Bacon",
-    "email": "wendi@open.ac.uk",
+    "email": "wendi.bacon@open.ac.uk",
     "twitter": "WendiBacon1",
     "joined": "2020-03",
     "elixir_node": "uk",
@@ -1507,6 +1528,12 @@
     "bio": "Research at the South African National Bioinformatics Institute",
     "id": "pvanheus",
     "url": "https://training.galaxyproject.org/training-material/api/contributors/pvanheus.json"
+  },
+  {
+    "name": "Soumya Jha",
+    "joined": "2022-06",
+    "id": "Quickbeasts51429",
+    "url": "https://training.galaxyproject.org/training-material/api/contributors/Quickbeasts51429.json"
   },
   {
     "name": "Ryan Abernathey",
@@ -1800,6 +1827,9 @@
   },
   {
     "name": "Torfinn Nome",
+    "email": "torfinn.nome@gmail.com",
+    "twitter": "torfinnnome",
+    "orcid": "0000-0003-1659-132X",
     "joined": "2021-01",
     "elixir_node": "no",
     "id": "torfinnnome",

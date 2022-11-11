@@ -53,7 +53,6 @@
       "epsrc-training-grant"
     ]
   },
-  "last_modified_at": "2022-09-30T12:46:09+00:00",
   "url": "/topics/transcriptomics/tutorials/scrna-case_monocle3-trajectories/tutorial.html",
   "topic_name": "transcriptomics",
   "tutorial_name": "scrna-case_monocle3-trajectories",
@@ -78,7 +77,7 @@
     },
     {
       "name": "Wendi Bacon",
-      "email": "wendi@open.ac.uk",
+      "email": "wendi.bacon@open.ac.uk",
       "twitter": "WendiBacon1",
       "joined": "2020-03",
       "elixir_node": "uk",
@@ -87,7 +86,7 @@
     },
     {
       "name": "Wendi Bacon",
-      "email": "wendi@open.ac.uk",
+      "email": "wendi.bacon@open.ac.uk",
       "twitter": "WendiBacon1",
       "joined": "2020-03",
       "elixir_node": "uk",
