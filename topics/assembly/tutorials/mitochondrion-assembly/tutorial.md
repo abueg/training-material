@@ -33,12 +33,13 @@ This tutorial uses data from the Zebra Finch (*Taeniopygia guttata*) generated b
 >
 {: .comment}
 
-The assembly is using the wrapped workflow MitoHifi. 
+The assembly is using the wrapped workflow MitoHiFi.
+ 
 MitoHiFi: 
-- Extracts mitochondrial reads (based on a BLAST with an existing reference mitogenome) and uses hifiasm {% cite Cheng2021 %} to assemble them. 
-- Identify NUMTS (Nuclear mitochondrial DNA Sequences) from mitochondrial contigs
-- Generate a circularized and annotated genome for all mitochondrial variants in a sample
-- Select a representative for the final mitochondrial assembly
+- Extracts mitochondrial reads (based on a BLAST against an existing reference mitogenome) and uses hifiasm {% cite Cheng2021 %} to assemble them. 
+- Removes nuclear mitochondrial DNA sequences (NUMTs) from the potential mitogenome contigs
+- Generates a circularized and annotated genome for all potential mitogenome contigs
+- Selects a representative for the final mitochondrial assembly
 
 
 > <agenda-title></agenda-title>
