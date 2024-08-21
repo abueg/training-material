@@ -76,16 +76,16 @@ MitoHiFi:
 
 # Download the mitogenome for a related species
 
-To assemble the mitogenome from our PacBio Ddata,  MitoHifi needs a mitogenome reference to identify the mitochondrial reads (the reads are blasted against the related reference). To download this reference, we use the tool MitoHifi with the operation `Find a closely related species`
+To assemble the mitogenome from our PacBio Data,  MitoHiFi needs a reference mitogenome to fish out mitochondrial reads (the reads are blasted against the related reference). To download this reference, we use the tool MitoHiFi with the operation `Find a closely related species`
 
 
-> <hands-on-title> Task description </hands-on-title>
+> <hands-on-title> Find a related mitogenome reference </hands-on-title>
 >
 > 1. {% tool [MitoHiFi](toolshed.g2.bx.psu.edu/repos/bgruening/mitohifi/mitohifi/3+galaxy0) %} with the following parameters:
 >    - *"Operation type selector"*: `Find a close-related mitochondrial reference genome`
 >        - *"Species name"*: `Taeniopygia guttata` Enter the latin name of the species you are assembling
 >        - *"Email"*: `your.email@service.com` Enter your email 
->        - *"Minimal appropriate length"*: `15000`
+>        - *"Minimal appropriate length"*: `15000` As vertebrate mitochondrial genomes are typically at least 14kbp long, we are using a value in this range so that we get complete mitogenome results as our reference. 
 >
 >
 {: .hands_on}
@@ -93,7 +93,7 @@ To assemble the mitogenome from our PacBio Ddata,  MitoHifi needs a mitogenome r
 
 ## Assemble the  mitochondrial genome with **MitoHiFi**
 
-> <hands-on-title> Assemble the mitochondrial Genome </hands-on-title>
+> <hands-on-title> Assemble the mitochondrial genome </hands-on-title>
 >
 > 1. Create a collection with your PacBio Hifi Reads
 >
@@ -107,20 +107,20 @@ To assemble the mitogenome from our PacBio Ddata,  MitoHifi needs a mitogenome r
 >        - {% icon param-file %} *"Close-related mitogenome in genbank format"*: `MitoHiFi on : reference genome (genbank)` (output of **MitoHiFi** {% icon tool %})
 >        - *"Genetic code"*: `Vertebrate mitochondrial code`
 >        - In *"Advanced options"*:
->            - *"Blast percentage identity"*: `70`
+>            - *"Blast percentage identity"*: `70` This setting filters the potential mito contigs -- setting it to 70 means that we are retaining contigs with at least 70% of its length in the BLAST match. This parameter can be lowered if you are expecting more sequence divergence among mitogenomes of your taxa, or vice versa.
 >
 >
 {: .hands_on}
 
 
 Outputs of MitoHifi:
-- Final mitogenome (FASTA). Mitochondrial Genome circularized and rotated to start at tRNA-Phe
-- Final mitogenome (genbank). The final mitochondria annotated in GenBank format.
-- Final mitogenome annotation (png). The predicted genes in the final mitogenome
-- Final mitogenome coverage (png). The sequencing coverage along the final mitogenome
-- Contigs stats (TSV). Contains the statistics of your assembled mitogenomes such as the number of genes, size, whether it was circularized or not, if the sequence has frameshifts etc...
-- Reads mapped to close-related mtDNA (FASTA). All and filtered by size
-- Hifiasm contigs (fasta). The different contigs found in the assembly
+- Final mitogenome (FASTA). Mitochondrial genome circularized and rotated to start at tRNA-Phe.
+- Final mitogenome (genbank). The final mitogenome annotated in GenBank format.
+- Final mitogenome annotation (png). The predicted genes in the final mitogenome.
+- Final mitogenome coverage (png). The sequencing coverage along the final mitogenome.
+- Contigs stats (TSV). Contains the statistics of your assembled mitogenomes such as the number of genes, size, whether it was circularized or not, if the sequence has frameshifts, and other metrics.
+- Reads mapped to close-related mtDNA (FASTA). All and filtered by size.
+- Hifiasm contigs (fasta). The results of running hifiasm on the mitochondrial reads. 
 
 ![Image produced by MitoHifi showing the genes annotated in our mitogenome](../../images/mito_annotation.png "Final mitogenome annotation")
 
@@ -128,4 +128,4 @@ Outputs of MitoHifi:
 
 # Conclusion
 
-In this tutorial, we learned how to assemble the mitochondrial genome using PacBio Hifi reads and MitoHifi. The same reads are the ones used to produced a complete genome assembly that can then be purged to keep only the nuclear genome. 
+In this tutorial, we learned how to assemble the mitochondrial genome using PacBio HiFi reads and MitoHiFi. You can try this tutorial on your own data using the full HiFi read set you'd use for the nuclear genome assembly, since the filtering for mitochondrial reads happens within MitoHiFi. 
